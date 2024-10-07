@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>교통사고 알림</title>
+  <!-- Font Awesome 최신 CSS CDN -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <style>
+    body {
+      font-family: 'Noto Sans KR', sans-serif;
+      background-color: #f0f4f8;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 20px;
+    }
+
+    .notification-container {
+      background-color: #ffffff;
+      border-radius: 15px;
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+      width: 400px;
+      padding: 20px;
+      margin-bottom: 20px;
+      animation: fadeIn 0.5s ease-in-out;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .notification-container:hover {
+      transform: translateY(-10px);
+      box-shadow: 0 12px 30px rgba(0, 0, 0, 0.2);
+    }
+
+    .notification-header {
+      display: flex;
+      align-items: center;
+      margin-bottom: 15px;
+    }
+
+    .notification-icon {
+      font-size: 24px;
+      color: #e74c3c;
+      margin-right: 10px;
+    }
+
+    .notification-title {
+      font-size: 18px;
+      font-weight: bold;
+      color: #333;
+    }
+
+    .notification-content p {
+      font-size: 14px;
+      color: #555;
+      margin-bottom: 10px;
+      display: flex;
+      align-items: center;
+    }
+
+    .notification-content i {
+      margin-right: 10px; /* 아이콘과 텍스트 사이의 간격 */
+    }
+
+    .clock-icon { color: #3498db; }
+    .road-icon { color: #f39c12; }
+    .direction-icon { color: #2ecc71; }
+    .warning-icon { color: #e74c3c; }
+    .info-icon { color: #8e44ad; }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(-10px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+  </style>
+</head>
+<body>
+
+<div id="notification-container"></div>
+
+<script>
+  fetch('./data/traffic_data.json')
+    .then(response => response.json())
+    .then(data => {
+      const container = document.getElementById('notification-container');
+
+      data.forEach(item => {
+        const div = document.createElement('div');
+        div.classList.add('notification-container');
+
+        const 돌발내용 = item['돌발내용'].replace(/-/g, '<br>');
+
+        div.innerHTML = `
+          <div class="notification-header">
+            <i class="fas fa-car-crash notification-icon"></i>
+            <h2 class="notification-title">교통사고 알림</h2>
+          </div>
+          <div class="notification-content">
+            <p class="hover-effect"><i class="fas fa-clock clock-icon"></i> 시간: ${item['돌발일시']}</p>
+            <p class="hover-effect"><i class="fas fa-road road-icon"></i> 도로명: ${item['도로명']} (도로번호: ${item['도로번호']})</p>
+            <p class="hover-effect"><i class="fas fa-location-arrow direction-icon"></i> 방향: ${item['방향']}</p>
+            <p class="hover-effect"><i class="fas fa-exclamation-triangle warning-icon"></i> 사고 유형: ${item['돌발구분']} - ${item['돌발상세구분']}</p>
+            <p class="hover-effect"><i class="fas fa-info-circle info-icon"></i> 상세 내용: ${돌발내용}</p>
+          </div>
+        `;
+
+        container.appendChild(div);
+      });
+    });
+</script>
+
+</body>
+</html>

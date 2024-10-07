@@ -1,0 +1,58 @@
+body {
+  font-family: 'Noto Sans KR', sans-serif;
+  background-color: #f2f2f2;
+  margin: 0;
+  padding: 20px;
+}
+
+.feed {
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.card {
+  background-color: #ffffff;
+  border-left: 5px solid #cccccc;
+  border-radius: 8px;
+  margin-bottom: 20px;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+  overflow: hidden;
+}
+
+.card.ongoing {
+  border-left-color: #e74c3c; /* 진행 중인 사고는 빨간색 */
+}
+
+.card.completed {
+  border-left-color: #2ecc71; /* 처리 완료된 사고는 녹색 */
+}
+
+.card-header {
+  background-color: #f8f8f8;
+  padding: 10px 15px;
+  display: flex;
+  align-items: center;
+}
+
+.card-header .icon {
+  font-size: 24px;
+  margin-right: 10px;
+}
+
+.card-header .title {
+  font-size: 18px;
+  font-weight: bold;
+}
+
+.card-body {
+  padding: 15px;
+}
+
+.card-body p {
+  margin: 5px 0;
+  color: #333333;
+}
+
+.card-body p strong {
+  color: #555555;
+}

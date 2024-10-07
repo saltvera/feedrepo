@@ -1,0 +1,109 @@
+/* 전체 레이아웃 */
+body {
+  font-family: 'Noto Sans KR', sans-serif;
+  background-color: #f0f4f8;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  margin: 0;
+}
+
+/* 알림창 스타일 */
+.notification-container {
+  background-color: #ffffff;
+  border-radius: 15px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+  width: 400px;
+  padding: 20px;
+  animation: fadeIn 0.5s ease-in-out;
+  transition: transform 0.3s ease, box-shadow 0.3s ease; /* 박스 호버 애니메이션 추가 */
+}
+
+/* 박스 전체 호버 효과 */
+.notification-container:hover {
+  transform: translateY(-10px); /* 박스가 살짝 떠오르는 느낌 */
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.2); /* 그림자 강화 */
+}
+
+/* 헤더 섹션 */
+.notification-header {
+  display: flex;
+  align-items: center;
+  margin-bottom: 15px;
+}
+
+.notification-icon {
+  font-size: 24px;
+  color: #e74c3c;
+  margin-right: 10px;
+}
+
+.notification-title {
+  font-size: 18px;
+  font-weight: bold;
+  color: #333;
+}
+
+/* 내용 섹션 */
+.notification-content p {
+  font-size: 14px;
+  color: #555;
+  margin-bottom: 10px;
+  display: flex;
+  align-items: center;
+}
+
+/* 다양한 아이콘 색상 */
+.clock-icon {
+  color: #3498db; /* 파란색 */
+}
+
+.road-icon {
+  color: #f39c12; /* 주황색 */
+}
+
+.direction-icon {
+  color: #2ecc71; /* 녹색 */
+}
+
+.warning-icon {
+  color: #e74c3c; /* 빨간색 */
+}
+
+.info-icon {
+  color: #8e44ad; /* 보라색 */
+}
+
+/* 호버 효과 */
+.hover-effect {
+  transition: background-color 0.3s ease, transform 0.3s ease;
+  border-radius: 8px;
+  padding: 5px;
+}
+
+.hover-effect:hover {
+  background-color: #f9f9f9;
+  transform: translateY(-3px);
+}
+
+.notification-content i {
+  margin-right: 8px;
+  transition: transform 0.3s ease;
+}
+
+.hover-effect:hover i {
+  transform: scale(1.2); /* 아이콘 확대 */
+}
+
+/* 알림창 애니메이션 */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}

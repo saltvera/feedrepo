@@ -1,0 +1,1630 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>교통사고 알림</title>
+  <!-- Font Awesome 최신 CSS CDN -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <style>
+    body {
+      font-family: 'Noto Sans KR', sans-serif;
+      background-color: #f0f4f8;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 20px;
+    }
+
+    .notification-container {
+      background-color: #ffffff;
+      border-radius: 15px;
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+      width: 400px;
+      padding: 20px;
+      margin-bottom: 20px;
+      animation: fadeIn 0.5s ease-in-out;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .notification-container:hover {
+      transform: translateY(-10px);
+      box-shadow: 0 12px 30px rgba(0, 0, 0, 0.2);
+    }
+
+    .notification-header {
+      display: flex;
+      align-items: center;
+      margin-bottom: 15px;
+    }
+
+    .notification-icon {
+      font-size: 24px;
+      color: #e74c3c;
+      margin-right: 10px;
+    }
+
+    .notification-title {
+      font-size: 18px;
+      font-weight: bold;
+      color: #333;
+    }
+
+    .notification-content p {
+      font-size: 14px;
+      color: #555;
+      margin-bottom: 10px;
+      display: flex;
+      align-items: center;
+    }
+
+    .notification-content i {
+      margin-right: 10px; /* 아이콘과 텍스트 사이의 간격 */
+    }
+
+    .clock-icon { color: #3498db; }
+    .road-icon { color: #f39c12; }
+    .direction-icon { color: #2ecc71; }
+    .warning-icon { color: #e74c3c; }
+    .info-icon { color: #8e44ad; }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(-10px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+  </style>
+</head>
+<body>
+
+<div id="notification-container"><div class="notification-container">
+  <div class="notification-header">
+    <i class="fas fa-car-crash notification-icon"></i>
+    <h2 class="notification-title">교통사고 알림</h2>
+  </div>
+  <div class="notification-content">
+    <p class="hover-effect"><i class="fas fa-clock clock-icon"></i> 시간: 2024-10-06 16:09</p>
+    <p class="hover-effect"><i class="fas fa-road road-icon"></i> 도로명: 호남선 (도로번호: 25)</p>
+    <p class="hover-effect"><i class="fas fa-location-arrow direction-icon"></i> 방향: 논산 방향</p>
+    <p class="hover-effect"><i class="fas fa-exclamation-triangle warning-icon"></i> 사고 유형: 교통사고 - 사고</p>
+    <p class="hover-effect"><i class="fas fa-info-circle info-icon"></i> 상세 내용: (갓길)승용차단독사고처리중</p>
+  </div>
+</div><div class="notification-container">
+  <div class="notification-header">
+    <i class="fas fa-car-crash notification-icon"></i>
+    <h2 class="notification-title">교통사고 알림</h2>
+  </div>
+  <div class="notification-content">
+    <p class="hover-effect"><i class="fas fa-clock clock-icon"></i> 시간: 2024-10-06 16:28</p>
+    <p class="hover-effect"><i class="fas fa-road road-icon"></i> 도로명: 중앙선 (도로번호: 55)</p>
+    <p class="hover-effect"><i class="fas fa-location-arrow direction-icon"></i> 방향: 춘천 방향</p>
+    <p class="hover-effect"><i class="fas fa-exclamation-triangle warning-icon"></i> 사고 유형: 교통사고 - 사고</p>
+    <p class="hover-effect"><i class="fas fa-info-circle info-icon"></i> 상세 내용: (갓길)승용차관련사고처리중</p>
+  </div>
+</div><div class="notification-container">
+  <div class="notification-header">
+    <i class="fas fa-car-crash notification-icon"></i>
+    <h2 class="notification-title">교통사고 알림</h2>
+  </div>
+  <div class="notification-content">
+    <p class="hover-effect"><i class="fas fa-clock clock-icon"></i> 시간: 2024-10-06 11:12</p>
+    <p class="hover-effect"><i class="fas fa-road road-icon"></i> 도로명: 부산외곽선 (도로번호: 600)</p>
+    <p class="hover-effect"><i class="fas fa-location-arrow direction-icon"></i> 방향: 창원 방향</p>
+    <p class="hover-effect"><i class="fas fa-exclamation-triangle warning-icon"></i> 사고 유형: 교통사고 - 사고</p>
+    <p class="hover-effect"><i class="fas fa-info-circle info-icon"></i> 상세 내용: (갓길)화물차단독사고처리중</p>
+  </div>
+</div><div class="notification-container">
+  <div class="notification-header">
+    <i class="fas fa-car-crash notification-icon"></i>
+    <h2 class="notification-title">교통사고 알림</h2>
+  </div>
+  <div class="notification-content">
+    <p class="hover-effect"><i class="fas fa-clock clock-icon"></i> 시간: 2024-10-06 11:54</p>
+    <p class="hover-effect"><i class="fas fa-road road-icon"></i> 도로명: 영동선 (도로번호: 50)</p>
+    <p class="hover-effect"><i class="fas fa-location-arrow direction-icon"></i> 방향: 강릉 방향</p>
+    <p class="hover-effect"><i class="fas fa-exclamation-triangle warning-icon"></i> 사고 유형: 교통사고 - 사고</p>
+    <p class="hover-effect"><i class="fas fa-info-circle info-icon"></i> 상세 내용: (1,2차로)승용차관련사고처리중</p>
+  </div>
+</div><div class="notification-container">
+  <div class="notification-header">
+    <i class="fas fa-car-crash notification-icon"></i>
+    <h2 class="notification-title">교통사고 알림</h2>
+  </div>
+  <div class="notification-content">
+    <p class="hover-effect"><i class="fas fa-clock clock-icon"></i> 시간: 2024-10-06 13:18</p>
+    <p class="hover-effect"><i class="fas fa-road road-icon"></i> 도로명: 중부내륙선 (도로번호: 45)</p>
+    <p class="hover-effect"><i class="fas fa-location-arrow direction-icon"></i> 방향: 창원 방향</p>
+    <p class="hover-effect"><i class="fas fa-exclamation-triangle warning-icon"></i> 사고 유형: 교통사고 - 사고</p>
+    <p class="hover-effect"><i class="fas fa-info-circle info-icon"></i> 상세 내용: (2차로)대형화물차관련사고처리중</p>
+  </div>
+</div><div class="notification-container">
+  <div class="notification-header">
+    <i class="fas fa-car-crash notification-icon"></i>
+    <h2 class="notification-title">교통사고 알림</h2>
+  </div>
+  <div class="notification-content">
+    <p class="hover-effect"><i class="fas fa-clock clock-icon"></i> 시간: 2024-10-06 18:08</p>
+    <p class="hover-effect"><i class="fas fa-road road-icon"></i> 도로명: 통영대전선 (도로번호: 35)</p>
+    <p class="hover-effect"><i class="fas fa-location-arrow direction-icon"></i> 방향: 대전 방향</p>
+    <p class="hover-effect"><i class="fas fa-exclamation-triangle warning-icon"></i> 사고 유형: 교통사고 - 사고</p>
+    <p class="hover-effect"><i class="fas fa-info-circle info-icon"></i> 상세 내용: (갓길)승용차관련사고처리중</p>
+  </div>
+</div><div class="notification-container">
+  <div class="notification-header">
+    <i class="fas fa-car-crash notification-icon"></i>
+    <h2 class="notification-title">교통사고 알림</h2>
+  </div>
+  <div class="notification-content">
+    <p class="hover-effect"><i class="fas fa-clock clock-icon"></i> 시간: 2024-10-06 20:32</p>
+    <p class="hover-effect"><i class="fas fa-road road-icon"></i> 도로명: 경부선 (도로번호: 1)</p>
+    <p class="hover-effect"><i class="fas fa-location-arrow direction-icon"></i> 방향: 서울 방향</p>
+    <p class="hover-effect"><i class="fas fa-exclamation-triangle warning-icon"></i> 사고 유형: 교통사고 - 사고</p>
+    <p class="hover-effect"><i class="fas fa-info-circle info-icon"></i> 상세 내용: (갓길)사고처리완료</p>
+  </div>
+</div><div class="notification-container">
+  <div class="notification-header">
+    <i class="fas fa-car-crash notification-icon"></i>
+    <h2 class="notification-title">교통사고 알림</h2>
+  </div>
+  <div class="notification-content">
+    <p class="hover-effect"><i class="fas fa-clock clock-icon"></i> 시간: 2024-10-06 15:12</p>
+    <p class="hover-effect"><i class="fas fa-road road-icon"></i> 도로명: 서울양양선 (도로번호: 60)</p>
+    <p class="hover-effect"><i class="fas fa-location-arrow direction-icon"></i> 방향: 양양 방향</p>
+    <p class="hover-effect"><i class="fas fa-exclamation-triangle warning-icon"></i> 사고 유형: 교통사고 - 사고</p>
+    <p class="hover-effect"><i class="fas fa-info-circle info-icon"></i> 상세 내용: (1차로)승용차사고처리중</p>
+  </div>
+</div><div class="notification-container">
+  <div class="notification-header">
+    <i class="fas fa-car-crash notification-icon"></i>
+    <h2 class="notification-title">교통사고 알림</h2>
+  </div>
+  <div class="notification-content">
+    <p class="hover-effect"><i class="fas fa-clock clock-icon"></i> 시간: 2024-10-06 18:04</p>
+    <p class="hover-effect"><i class="fas fa-road road-icon"></i> 도로명: 경부선 (도로번호: 1)</p>
+    <p class="hover-effect"><i class="fas fa-location-arrow direction-icon"></i> 방향: 부산 방향</p>
+    <p class="hover-effect"><i class="fas fa-exclamation-triangle warning-icon"></i> 사고 유형: 교통사고 - 사고</p>
+    <p class="hover-effect"><i class="fas fa-info-circle info-icon"></i> 상세 내용: (갓길)승용차단독사고처리중</p>
+  </div>
+</div><div class="notification-container">
+  <div class="notification-header">
+    <i class="fas fa-car-crash notification-icon"></i>
+    <h2 class="notification-title">교통사고 알림</h2>
+  </div>
+  <div class="notification-content">
+    <p class="hover-effect"><i class="fas fa-clock clock-icon"></i> 시간: 2024-10-06 12:50</p>
+    <p class="hover-effect"><i class="fas fa-road road-icon"></i> 도로명: 경인선 (도로번호: 120)</p>
+    <p class="hover-effect"><i class="fas fa-location-arrow direction-icon"></i> 방향: 인천 방향</p>
+    <p class="hover-effect"><i class="fas fa-exclamation-triangle warning-icon"></i> 사고 유형: 교통사고 - 사고</p>
+    <p class="hover-effect"><i class="fas fa-info-circle info-icon"></i> 상세 내용: (3차로)추돌사고처리중</p>
+  </div>
+</div><div class="notification-container">
+  <div class="notification-header">
+    <i class="fas fa-car-crash notification-icon"></i>
+    <h2 class="notification-title">교통사고 알림</h2>
+  </div>
+  <div class="notification-content">
+    <p class="hover-effect"><i class="fas fa-clock clock-icon"></i> 시간: 2024-10-06 12:50</p>
+    <p class="hover-effect"><i class="fas fa-road road-icon"></i> 도로명: 경인선 (도로번호: 120)</p>
+    <p class="hover-effect"><i class="fas fa-location-arrow direction-icon"></i> 방향: 인천 방향</p>
+    <p class="hover-effect"><i class="fas fa-exclamation-triangle warning-icon"></i> 사고 유형: 교통사고 - 사고</p>
+    <p class="hover-effect"><i class="fas fa-info-circle info-icon"></i> 상세 내용: (3차로)추돌사고처리완료</p>
+  </div>
+</div><div class="notification-container">
+  <div class="notification-header">
+    <i class="fas fa-car-crash notification-icon"></i>
+    <h2 class="notification-title">교통사고 알림</h2>
+  </div>
+  <div class="notification-content">
+    <p class="hover-effect"><i class="fas fa-clock clock-icon"></i> 시간: 2024-10-06 19:21</p>
+    <p class="hover-effect"><i class="fas fa-road road-icon"></i> 도로명: 중부선 (도로번호: 35)</p>
+    <p class="hover-effect"><i class="fas fa-location-arrow direction-icon"></i> 방향: 남이 방향</p>
+    <p class="hover-effect"><i class="fas fa-exclamation-triangle warning-icon"></i> 사고 유형: 교통사고 - 사고</p>
+    <p class="hover-effect"><i class="fas fa-info-circle info-icon"></i> 상세 내용: (1차로)승용차관련사고처리중</p>
+  </div>
+</div><div class="notification-container">
+  <div class="notification-header">
+    <i class="fas fa-car-crash notification-icon"></i>
+    <h2 class="notification-title">교통사고 알림</h2>
+  </div>
+  <div class="notification-content">
+    <p class="hover-effect"><i class="fas fa-clock clock-icon"></i> 시간: 2024-10-06 14:51</p>
+    <p class="hover-effect"><i class="fas fa-road road-icon"></i> 도로명: 광주대구선 (도로번호: 12)</p>
+    <p class="hover-effect"><i class="fas fa-location-arrow direction-icon"></i> 방향: 광주 방향</p>
+    <p class="hover-effect"><i class="fas fa-exclamation-triangle warning-icon"></i> 사고 유형: 교통사고 - 사고</p>
+    <p class="hover-effect"><i class="fas fa-info-circle info-icon"></i> 상세 내용: (1차로)승용차관련사고처리중</p>
+  </div>
+</div><div class="notification-container">
+  <div class="notification-header">
+    <i class="fas fa-car-crash notification-icon"></i>
+    <h2 class="notification-title">교통사고 알림</h2>
+  </div>
+  <div class="notification-content">
+    <p class="hover-effect"><i class="fas fa-clock clock-icon"></i> 시간: 2024-10-06 11:47</p>
+    <p class="hover-effect"><i class="fas fa-road road-icon"></i> 도로명: 중부내륙지선 (도로번호: 451)</p>
+    <p class="hover-effect"><i class="fas fa-location-arrow direction-icon"></i> 방향: 창원 방향</p>
+    <p class="hover-effect"><i class="fas fa-exclamation-triangle warning-icon"></i> 사고 유형: 교통사고 - 사고</p>
+    <p class="hover-effect"><i class="fas fa-info-circle info-icon"></i> 상세 내용: (2차로)승용차사고처리중</p>
+  </div>
+</div><div class="notification-container">
+  <div class="notification-header">
+    <i class="fas fa-car-crash notification-icon"></i>
+    <h2 class="notification-title">교통사고 알림</h2>
+  </div>
+  <div class="notification-content">
+    <p class="hover-effect"><i class="fas fa-clock clock-icon"></i> 시간: 2024-10-06 16:06</p>
+    <p class="hover-effect"><i class="fas fa-road road-icon"></i> 도로명: 중앙선지선 (도로번호: 551)</p>
+    <p class="hover-effect"><i class="fas fa-location-arrow direction-icon"></i> 방향: 양산 방향</p>
+    <p class="hover-effect"><i class="fas fa-exclamation-triangle warning-icon"></i> 사고 유형: 교통사고 - 사고</p>
+    <p class="hover-effect"><i class="fas fa-info-circle info-icon"></i> 상세 내용: (4차로)1톤화물차관련사고처리중</p>
+  </div>
+</div><div class="notification-container">
+  <div class="notification-header">
+    <i class="fas fa-car-crash notification-icon"></i>
+    <h2 class="notification-title">교통사고 알림</h2>
+  </div>
+  <div class="notification-content">
+    <p class="hover-effect"><i class="fas fa-clock clock-icon"></i> 시간: 2024-10-06 16:17</p>
+    <p class="hover-effect"><i class="fas fa-road road-icon"></i> 도로명: 영동선 (도로번호: 50)</p>
+    <p class="hover-effect"><i class="fas fa-location-arrow direction-icon"></i> 방향: 강릉 방향</p>
+    <p class="hover-effect"><i class="fas fa-exclamation-triangle warning-icon"></i> 사고 유형: 교통사고 - 사고</p>
+    <p class="hover-effect"><i class="fas fa-info-circle info-icon"></i> 상세 내용: (1차로)승용차관련사고처리중</p>
+  </div>
+</div><div class="notification-container">
+  <div class="notification-header">
+    <i class="fas fa-car-crash notification-icon"></i>
+    <h2 class="notification-title">교통사고 알림</h2>
+  </div>
+  <div class="notification-content">
+    <p class="hover-effect"><i class="fas fa-clock clock-icon"></i> 시간: 2024-10-06 19:21</p>
+    <p class="hover-effect"><i class="fas fa-road road-icon"></i> 도로명: 서울양양선 (도로번호: 60)</p>
+    <p class="hover-effect"><i class="fas fa-location-arrow direction-icon"></i> 방향: 양양 방향</p>
+    <p class="hover-effect"><i class="fas fa-exclamation-triangle warning-icon"></i> 사고 유형: 교통사고 - 사고</p>
+    <p class="hover-effect"><i class="fas fa-info-circle info-icon"></i> 상세 내용: (1차로)승용차관련사고처리중</p>
+  </div>
+</div><div class="notification-container">
+  <div class="notification-header">
+    <i class="fas fa-car-crash notification-icon"></i>
+    <h2 class="notification-title">교통사고 알림</h2>
+  </div>
+  <div class="notification-content">
+    <p class="hover-effect"><i class="fas fa-clock clock-icon"></i> 시간: 2024-10-06 15:49</p>
+    <p class="hover-effect"><i class="fas fa-road road-icon"></i> 도로명: 남해선(순천-부산) (도로번호: 10)</p>
+    <p class="hover-effect"><i class="fas fa-location-arrow direction-icon"></i> 방향: 순천 방향</p>
+    <p class="hover-effect"><i class="fas fa-exclamation-triangle warning-icon"></i> 사고 유형: 교통사고 - 사고</p>
+    <p class="hover-effect"><i class="fas fa-info-circle info-icon"></i> 상세 내용: (갓길)승용차관련사고처리중</p>
+  </div>
+</div><div class="notification-container">
+  <div class="notification-header">
+    <i class="fas fa-car-crash notification-icon"></i>
+    <h2 class="notification-title">교통사고 알림</h2>
+  </div>
+  <div class="notification-content">
+    <p class="hover-effect"><i class="fas fa-clock clock-icon"></i> 시간: 2024-10-06 16:40</p>
+    <p class="hover-effect"><i class="fas fa-road road-icon"></i> 도로명: 당진대전선 (도로번호: 30)</p>
+    <p class="hover-effect"><i class="fas fa-location-arrow direction-icon"></i> 방향: 당진 방향</p>
+    <p class="hover-effect"><i class="fas fa-exclamation-triangle warning-icon"></i> 사고 유형: 교통사고 - 사고</p>
+    <p class="hover-effect"><i class="fas fa-info-circle info-icon"></i> 상세 내용: (1차로)승용차사고처리중</p>
+  </div>
+</div><div class="notification-container">
+  <div class="notification-header">
+    <i class="fas fa-car-crash notification-icon"></i>
+    <h2 class="notification-title">교통사고 알림</h2>
+  </div>
+  <div class="notification-content">
+    <p class="hover-effect"><i class="fas fa-clock clock-icon"></i> 시간: 2024-10-06 10:30</p>
+    <p class="hover-effect"><i class="fas fa-road road-icon"></i> 도로명: 경부선 (도로번호: 1)</p>
+    <p class="hover-effect"><i class="fas fa-location-arrow direction-icon"></i> 방향: 서울 방향</p>
+    <p class="hover-effect"><i class="fas fa-exclamation-triangle warning-icon"></i> 사고 유형: 교통사고 - 사고</p>
+    <p class="hover-effect"><i class="fas fa-info-circle info-icon"></i> 상세 내용: (진출로갓길)승용차단독사고처리중</p>
+  </div>
+</div><div class="notification-container">
+  <div class="notification-header">
+    <i class="fas fa-car-crash notification-icon"></i>
+    <h2 class="notification-title">교통사고 알림</h2>
+  </div>
+  <div class="notification-content">
+    <p class="hover-effect"><i class="fas fa-clock clock-icon"></i> 시간: 2024-10-06 10:58</p>
+    <p class="hover-effect"><i class="fas fa-road road-icon"></i> 도로명: 중부내륙선 (도로번호: 45)</p>
+    <p class="hover-effect"><i class="fas fa-location-arrow direction-icon"></i> 방향: 창원 방향</p>
+    <p class="hover-effect"><i class="fas fa-exclamation-triangle warning-icon"></i> 사고 유형: 교통사고 - 사고</p>
+    <p class="hover-effect"><i class="fas fa-info-circle info-icon"></i> 상세 내용: (1차로)승용차관련사고처리완료</p>
+  </div>
+</div><div class="notification-container">
+  <div class="notification-header">
+    <i class="fas fa-car-crash notification-icon"></i>
+    <h2 class="notification-title">교통사고 알림</h2>
+  </div>
+  <div class="notification-content">
+    <p class="hover-effect"><i class="fas fa-clock clock-icon"></i> 시간: 2024-10-06 20:32</p>
+    <p class="hover-effect"><i class="fas fa-road road-icon"></i> 도로명: 경부선 (도로번호: 1)</p>
+    <p class="hover-effect"><i class="fas fa-location-arrow direction-icon"></i> 방향: 서울 방향</p>
+    <p class="hover-effect"><i class="fas fa-exclamation-triangle warning-icon"></i> 사고 유형: 교통사고 - 사고</p>
+    <p class="hover-effect"><i class="fas fa-info-circle info-icon"></i> 상세 내용: (갓길)사고처리중</p>
+  </div>
+</div><div class="notification-container">
+  <div class="notification-header">
+    <i class="fas fa-car-crash notification-icon"></i>
+    <h2 class="notification-title">교통사고 알림</h2>
+  </div>
+  <div class="notification-content">
+    <p class="hover-effect"><i class="fas fa-clock clock-icon"></i> 시간: 2024-10-06 16:13</p>
+    <p class="hover-effect"><i class="fas fa-road road-icon"></i> 도로명: 중앙선 (도로번호: 55)</p>
+    <p class="hover-effect"><i class="fas fa-location-arrow direction-icon"></i> 방향: 부산 방향</p>
+    <p class="hover-effect"><i class="fas fa-exclamation-triangle warning-icon"></i> 사고 유형: 교통사고 - 사고</p>
+    <p class="hover-effect"><i class="fas fa-info-circle info-icon"></i> 상세 내용: (2차로)승용차사고처리중</p>
+  </div>
+</div><div class="notification-container">
+  <div class="notification-header">
+    <i class="fas fa-car-crash notification-icon"></i>
+    <h2 class="notification-title">교통사고 알림</h2>
+  </div>
+  <div class="notification-content">
+    <p class="hover-effect"><i class="fas fa-clock clock-icon"></i> 시간: 2024-10-06 15:54</p>
+    <p class="hover-effect"><i class="fas fa-road road-icon"></i> 도로명: 광주대구선 (도로번호: 12)</p>
+    <p class="hover-effect"><i class="fas fa-location-arrow direction-icon"></i> 방향: 광주 방향</p>
+    <p class="hover-effect"><i class="fas fa-exclamation-triangle warning-icon"></i> 사고 유형: 교통사고 - 사고</p>
+    <p class="hover-effect"><i class="fas fa-info-circle info-icon"></i> 상세 내용: (1차로)승용차관련사고처리중</p>
+  </div>
+</div><div class="notification-container">
+  <div class="notification-header">
+    <i class="fas fa-car-crash notification-icon"></i>
+    <h2 class="notification-title">교통사고 알림</h2>
+  </div>
+  <div class="notification-content">
+    <p class="hover-effect"><i class="fas fa-clock clock-icon"></i> 시간: 2024-10-06 12:46</p>
+    <p class="hover-effect"><i class="fas fa-road road-icon"></i> 도로명: 평택제천선 (도로번호: 40)</p>
+    <p class="hover-effect"><i class="fas fa-location-arrow direction-icon"></i> 방향: 제천 방향</p>
+    <p class="hover-effect"><i class="fas fa-exclamation-triangle warning-icon"></i> 사고 유형: 교통사고 - 사고</p>
+    <p class="hover-effect"><i class="fas fa-info-circle info-icon"></i> 상세 내용: (1차로)승용차관련사고처리중</p>
+  </div>
+</div><div class="notification-container">
+  <div class="notification-header">
+    <i class="fas fa-car-crash notification-icon"></i>
+    <h2 class="notification-title">교통사고 알림</h2>
+  </div>
+  <div class="notification-content">
+    <p class="hover-effect"><i class="fas fa-clock clock-icon"></i> 시간: 2024-10-06 21:49</p>
+    <p class="hover-effect"><i class="fas fa-road road-icon"></i> 도로명: 수도권제1순환선 (도로번호: 100)</p>
+    <p class="hover-effect"><i class="fas fa-location-arrow direction-icon"></i> 방향: 판교-일산 방향</p>
+    <p class="hover-effect"><i class="fas fa-exclamation-triangle warning-icon"></i> 사고 유형: 교통사고 - 사고</p>
+    <p class="hover-effect"><i class="fas fa-info-circle info-icon"></i> 상세 내용: (5차로)승용차관련사고처리중</p>
+  </div>
+</div><div class="notification-container">
+  <div class="notification-header">
+    <i class="fas fa-car-crash notification-icon"></i>
+    <h2 class="notification-title">교통사고 알림</h2>
+  </div>
+  <div class="notification-content">
+    <p class="hover-effect"><i class="fas fa-clock clock-icon"></i> 시간: 2024-10-06 11:46</p>
+    <p class="hover-effect"><i class="fas fa-road road-icon"></i> 도로명: 중부내륙선 (도로번호: 45)</p>
+    <p class="hover-effect"><i class="fas fa-location-arrow direction-icon"></i> 방향: 창원 방향</p>
+    <p class="hover-effect"><i class="fas fa-exclamation-triangle warning-icon"></i> 사고 유형: 교통사고 - 사고</p>
+    <p class="hover-effect"><i class="fas fa-info-circle info-icon"></i> 상세 내용: (2차로)승용차관련사고처리중</p>
+  </div>
+</div><div class="notification-container">
+  <div class="notification-header">
+    <i class="fas fa-car-crash notification-icon"></i>
+    <h2 class="notification-title">교통사고 알림</h2>
+  </div>
+  <div class="notification-content">
+    <p class="hover-effect"><i class="fas fa-clock clock-icon"></i> 시간: 2024-10-06 16:25</p>
+    <p class="hover-effect"><i class="fas fa-road road-icon"></i> 도로명: 통영대전선 (도로번호: 35)</p>
+    <p class="hover-effect"><i class="fas fa-location-arrow direction-icon"></i> 방향: 대전 방향</p>
+    <p class="hover-effect"><i class="fas fa-exclamation-triangle warning-icon"></i> 사고 유형: 교통사고 - 사고</p>
+    <p class="hover-effect"><i class="fas fa-info-circle info-icon"></i> 상세 내용: (1차로)승용차단독사고처리중</p>
+  </div>
+</div><div class="notification-container">
+  <div class="notification-header">
+    <i class="fas fa-car-crash notification-icon"></i>
+    <h2 class="notification-title">교통사고 알림</h2>
+  </div>
+  <div class="notification-content">
+    <p class="hover-effect"><i class="fas fa-clock clock-icon"></i> 시간: 2024-10-06 16:28</p>
+    <p class="hover-effect"><i class="fas fa-road road-icon"></i> 도로명: 중앙선 (도로번호: 55)</p>
+    <p class="hover-effect"><i class="fas fa-location-arrow direction-icon"></i> 방향: 춘천 방향</p>
+    <p class="hover-effect"><i class="fas fa-exclamation-triangle warning-icon"></i> 사고 유형: 교통사고 - 사고</p>
+    <p class="hover-effect"><i class="fas fa-info-circle info-icon"></i> 상세 내용: (1차로)승용차관련사고처리중</p>
+  </div>
+</div><div class="notification-container">
+  <div class="notification-header">
+    <i class="fas fa-car-crash notification-icon"></i>
+    <h2 class="notification-title">교통사고 알림</h2>
+  </div>
+  <div class="notification-content">
+    <p class="hover-effect"><i class="fas fa-clock clock-icon"></i> 시간: 2024-10-06 10:58</p>
+    <p class="hover-effect"><i class="fas fa-road road-icon"></i> 도로명: 중부내륙선 (도로번호: 45)</p>
+    <p class="hover-effect"><i class="fas fa-location-arrow direction-icon"></i> 방향: 창원 방향</p>
+    <p class="hover-effect"><i class="fas fa-exclamation-triangle warning-icon"></i> 사고 유형: 교통사고 - 사고</p>
+    <p class="hover-effect"><i class="fas fa-info-circle info-icon"></i> 상세 내용: (1차로)승용차관련사고처리중</p>
+  </div>
+</div><div class="notification-container">
+  <div class="notification-header">
+    <i class="fas fa-car-crash notification-icon"></i>
+    <h2 class="notification-title">교통사고 알림</h2>
+  </div>
+  <div class="notification-content">
+    <p class="hover-effect"><i class="fas fa-clock clock-icon"></i> 시간: 2024-10-06 20:32</p>
+    <p class="hover-effect"><i class="fas fa-road road-icon"></i> 도로명: 경부선 (도로번호: 1)</p>
+    <p class="hover-effect"><i class="fas fa-location-arrow direction-icon"></i> 방향: 서울 방향</p>
+    <p class="hover-effect"><i class="fas fa-exclamation-triangle warning-icon"></i> 사고 유형: 교통사고 - 사고</p>
+    <p class="hover-effect"><i class="fas fa-info-circle info-icon"></i> 상세 내용: (5차로)사고처리중</p>
+  </div>
+</div><div class="notification-container">
+  <div class="notification-header">
+    <i class="fas fa-car-crash notification-icon"></i>
+    <h2 class="notification-title">교통사고 알림</h2>
+  </div>
+  <div class="notification-content">
+    <p class="hover-effect"><i class="fas fa-clock clock-icon"></i> 시간: 2024-10-06 20:53</p>
+    <p class="hover-effect"><i class="fas fa-road road-icon"></i> 도로명: 경인선 (도로번호: 120)</p>
+    <p class="hover-effect"><i class="fas fa-location-arrow direction-icon"></i> 방향: 인천 방향</p>
+    <p class="hover-effect"><i class="fas fa-exclamation-triangle warning-icon"></i> 사고 유형: 교통사고 - 사고</p>
+    <p class="hover-effect"><i class="fas fa-info-circle info-icon"></i> 상세 내용: (갓길)광장부</p>
+  </div>
+</div><div class="notification-container">
+  <div class="notification-header">
+    <i class="fas fa-car-crash notification-icon"></i>
+    <h2 class="notification-title">교통사고 알림</h2>
+  </div>
+  <div class="notification-content">
+    <p class="hover-effect"><i class="fas fa-clock clock-icon"></i> 시간: 2024-10-06 15:54</p>
+    <p class="hover-effect"><i class="fas fa-road road-icon"></i> 도로명: 광주대구선 (도로번호: 12)</p>
+    <p class="hover-effect"><i class="fas fa-location-arrow direction-icon"></i> 방향: 광주 방향</p>
+    <p class="hover-effect"><i class="fas fa-exclamation-triangle warning-icon"></i> 사고 유형: 교통사고 - 사고</p>
+    <p class="hover-effect"><i class="fas fa-info-circle info-icon"></i> 상세 내용: (1차로)승용차관련사고처리완료</p>
+  </div>
+</div><div class="notification-container">
+  <div class="notification-header">
+    <i class="fas fa-car-crash notification-icon"></i>
+    <h2 class="notification-title">교통사고 알림</h2>
+  </div>
+  <div class="notification-content">
+    <p class="hover-effect"><i class="fas fa-clock clock-icon"></i> 시간: 2024-10-06 18:39</p>
+    <p class="hover-effect"><i class="fas fa-road road-icon"></i> 도로명: 경부선 (도로번호: 1)</p>
+    <p class="hover-effect"><i class="fas fa-location-arrow direction-icon"></i> 방향: 부산 방향</p>
+    <p class="hover-effect"><i class="fas fa-exclamation-triangle warning-icon"></i> 사고 유형: 교통사고 - 사고</p>
+    <p class="hover-effect"><i class="fas fa-info-circle info-icon"></i> 상세 내용: (2차로)승용차단독사고처리중</p>
+  </div>
+</div><div class="notification-container">
+  <div class="notification-header">
+    <i class="fas fa-car-crash notification-icon"></i>
+    <h2 class="notification-title">교통사고 알림</h2>
+  </div>
+  <div class="notification-content">
+    <p class="hover-effect"><i class="fas fa-clock clock-icon"></i> 시간: 2024-10-06 6:17</p>
+    <p class="hover-effect"><i class="fas fa-road road-icon"></i> 도로명: 경부선 (도로번호: 1)</p>
+    <p class="hover-effect"><i class="fas fa-location-arrow direction-icon"></i> 방향: 부산 방향</p>
+    <p class="hover-effect"><i class="fas fa-exclamation-triangle warning-icon"></i> 사고 유형: 교통사고 - 사고</p>
+    <p class="hover-effect"><i class="fas fa-info-circle info-icon"></i> 상세 내용: (1,4차로)승용차추돌사고처리중</p>
+  </div>
+</div><div class="notification-container">
+  <div class="notification-header">
+    <i class="fas fa-car-crash notification-icon"></i>
+    <h2 class="notification-title">교통사고 알림</h2>
+  </div>
+  <div class="notification-content">
+    <p class="hover-effect"><i class="fas fa-clock clock-icon"></i> 시간: 2024-10-06 13:53</p>
+    <p class="hover-effect"><i class="fas fa-road road-icon"></i> 도로명: 남해선(순천-부산) (도로번호: 10)</p>
+    <p class="hover-effect"><i class="fas fa-location-arrow direction-icon"></i> 방향: 부산 방향</p>
+    <p class="hover-effect"><i class="fas fa-exclamation-triangle warning-icon"></i> 사고 유형: 교통사고 - 사고</p>
+    <p class="hover-effect"><i class="fas fa-info-circle info-icon"></i> 상세 내용: (4차로,갓길)승용차관련사고처리완료</p>
+  </div>
+</div><div class="notification-container">
+  <div class="notification-header">
+    <i class="fas fa-car-crash notification-icon"></i>
+    <h2 class="notification-title">교통사고 알림</h2>
+  </div>
+  <div class="notification-content">
+    <p class="hover-effect"><i class="fas fa-clock clock-icon"></i> 시간: 2024-10-06 19:48</p>
+    <p class="hover-effect"><i class="fas fa-road road-icon"></i> 도로명: 동해선(부산-포항) (도로번호: 65)</p>
+    <p class="hover-effect"><i class="fas fa-location-arrow direction-icon"></i> 방향: 부산 방향</p>
+    <p class="hover-effect"><i class="fas fa-exclamation-triangle warning-icon"></i> 사고 유형: 교통사고 - 사고</p>
+    <p class="hover-effect"><i class="fas fa-info-circle info-icon"></i> 상세 내용: (진출로갓길)승용차단독사고처리중</p>
+  </div>
+</div><div class="notification-container">
+  <div class="notification-header">
+    <i class="fas fa-car-crash notification-icon"></i>
+    <h2 class="notification-title">교통사고 알림</h2>
+  </div>
+  <div class="notification-content">
+    <p class="hover-effect"><i class="fas fa-clock clock-icon"></i> 시간: 2024-10-06 15:11</p>
+    <p class="hover-effect"><i class="fas fa-road road-icon"></i> 도로명: 경부선 (도로번호: 1)</p>
+    <p class="hover-effect"><i class="fas fa-location-arrow direction-icon"></i> 방향: 서울 방향</p>
+    <p class="hover-effect"><i class="fas fa-exclamation-triangle warning-icon"></i> 사고 유형: 교통사고 - 사고</p>
+    <p class="hover-effect"><i class="fas fa-info-circle info-icon"></i> 상세 내용: (갓길)승용차관련사고처리중</p>
+  </div>
+</div><div class="notification-container">
+  <div class="notification-header">
+    <i class="fas fa-car-crash notification-icon"></i>
+    <h2 class="notification-title">교통사고 알림</h2>
+  </div>
+  <div class="notification-content">
+    <p class="hover-effect"><i class="fas fa-clock clock-icon"></i> 시간: 2024-10-06 16:28</p>
+    <p class="hover-effect"><i class="fas fa-road road-icon"></i> 도로명: 중앙선 (도로번호: 55)</p>
+    <p class="hover-effect"><i class="fas fa-location-arrow direction-icon"></i> 방향: 춘천 방향</p>
+    <p class="hover-effect"><i class="fas fa-exclamation-triangle warning-icon"></i> 사고 유형: 교통사고 - 사고</p>
+    <p class="hover-effect"><i class="fas fa-info-circle info-icon"></i> 상세 내용: (갓길)승용차관련사고처리완료</p>
+  </div>
+</div><div class="notification-container">
+  <div class="notification-header">
+    <i class="fas fa-car-crash notification-icon"></i>
+    <h2 class="notification-title">교통사고 알림</h2>
+  </div>
+  <div class="notification-content">
+    <p class="hover-effect"><i class="fas fa-clock clock-icon"></i> 시간: 2024-10-06 14:13</p>
+    <p class="hover-effect"><i class="fas fa-road road-icon"></i> 도로명: 서울양양선 (도로번호: 60)</p>
+    <p class="hover-effect"><i class="fas fa-location-arrow direction-icon"></i> 방향: 양양 방향</p>
+    <p class="hover-effect"><i class="fas fa-exclamation-triangle warning-icon"></i> 사고 유형: 교통사고 - 사고</p>
+    <p class="hover-effect"><i class="fas fa-info-circle info-icon"></i> 상세 내용: (2차로)승용차관련사고처리중</p>
+  </div>
+</div><div class="notification-container">
+  <div class="notification-header">
+    <i class="fas fa-car-crash notification-icon"></i>
+    <h2 class="notification-title">교통사고 알림</h2>
+  </div>
+  <div class="notification-content">
+    <p class="hover-effect"><i class="fas fa-clock clock-icon"></i> 시간: 2024-10-06 14:39</p>
+    <p class="hover-effect"><i class="fas fa-road road-icon"></i> 도로명: 영동선 (도로번호: 50)</p>
+    <p class="hover-effect"><i class="fas fa-location-arrow direction-icon"></i> 방향: 강릉 방향</p>
+    <p class="hover-effect"><i class="fas fa-exclamation-triangle warning-icon"></i> 사고 유형: 교통사고 - 사고</p>
+    <p class="hover-effect"><i class="fas fa-info-circle info-icon"></i> 상세 내용: (1차로)승용차사고처리중</p>
+  </div>
+</div><div class="notification-container">
+  <div class="notification-header">
+    <i class="fas fa-car-crash notification-icon"></i>
+    <h2 class="notification-title">교통사고 알림</h2>
+  </div>
+  <div class="notification-content">
+    <p class="hover-effect"><i class="fas fa-clock clock-icon"></i> 시간: 2024-10-06 20:05</p>
+    <p class="hover-effect"><i class="fas fa-road road-icon"></i> 도로명: 경부선 (도로번호: 1)</p>
+    <p class="hover-effect"><i class="fas fa-location-arrow direction-icon"></i> 방향: 서울 방향</p>
+    <p class="hover-effect"><i class="fas fa-exclamation-triangle warning-icon"></i> 사고 유형: 교통사고 - 사고</p>
+    <p class="hover-effect"><i class="fas fa-info-circle info-icon"></i> 상세 내용: (갓길)승용차단독사고처리중</p>
+  </div>
+</div><div class="notification-container">
+  <div class="notification-header">
+    <i class="fas fa-car-crash notification-icon"></i>
+    <h2 class="notification-title">교통사고 알림</h2>
+  </div>
+  <div class="notification-content">
+    <p class="hover-effect"><i class="fas fa-clock clock-icon"></i> 시간: 2024-10-06 16:25</p>
+    <p class="hover-effect"><i class="fas fa-road road-icon"></i> 도로명: 통영대전선 (도로번호: 35)</p>
+    <p class="hover-effect"><i class="fas fa-location-arrow direction-icon"></i> 방향: 대전 방향</p>
+    <p class="hover-effect"><i class="fas fa-exclamation-triangle warning-icon"></i> 사고 유형: 교통사고 - 사고</p>
+    <p class="hover-effect"><i class="fas fa-info-circle info-icon"></i> 상세 내용: (1차로)승용차단독사고처리dhksfy</p>
+  </div>
+</div><div class="notification-container">
+  <div class="notification-header">
+    <i class="fas fa-car-crash notification-icon"></i>
+    <h2 class="notification-title">교통사고 알림</h2>
+  </div>
+  <div class="notification-content">
+    <p class="hover-effect"><i class="fas fa-clock clock-icon"></i> 시간: 2024-10-06 20:23</p>
+    <p class="hover-effect"><i class="fas fa-road road-icon"></i> 도로명: 경부선 (도로번호: 1)</p>
+    <p class="hover-effect"><i class="fas fa-location-arrow direction-icon"></i> 방향: 부산 방향</p>
+    <p class="hover-effect"><i class="fas fa-exclamation-triangle warning-icon"></i> 사고 유형: 교통사고 - 사고</p>
+    <p class="hover-effect"><i class="fas fa-info-circle info-icon"></i> 상세 내용: (1,3차로)버스관련사고처리중</p>
+  </div>
+</div><div class="notification-container">
+  <div class="notification-header">
+    <i class="fas fa-car-crash notification-icon"></i>
+    <h2 class="notification-title">교통사고 알림</h2>
+  </div>
+  <div class="notification-content">
+    <p class="hover-effect"><i class="fas fa-clock clock-icon"></i> 시간: 2024-10-06 15:11</p>
+    <p class="hover-effect"><i class="fas fa-road road-icon"></i> 도로명: 경부선 (도로번호: 1)</p>
+    <p class="hover-effect"><i class="fas fa-location-arrow direction-icon"></i> 방향: 서울 방향</p>
+    <p class="hover-effect"><i class="fas fa-exclamation-triangle warning-icon"></i> 사고 유형: 교통사고 - 사고</p>
+    <p class="hover-effect"><i class="fas fa-info-circle info-icon"></i> 상세 내용: (3차로)승용차관련사고처리중</p>
+  </div>
+</div><div class="notification-container">
+  <div class="notification-header">
+    <i class="fas fa-car-crash notification-icon"></i>
+    <h2 class="notification-title">교통사고 알림</h2>
+  </div>
+  <div class="notification-content">
+    <p class="hover-effect"><i class="fas fa-clock clock-icon"></i> 시간: 2024-10-06 20:11</p>
+    <p class="hover-effect"><i class="fas fa-road road-icon"></i> 도로명: 중부내륙선 (도로번호: 45)</p>
+    <p class="hover-effect"><i class="fas fa-location-arrow direction-icon"></i> 방향: 창원 방향</p>
+    <p class="hover-effect"><i class="fas fa-exclamation-triangle warning-icon"></i> 사고 유형: 교통사고 - 사고</p>
+    <p class="hover-effect"><i class="fas fa-info-circle info-icon"></i> 상세 내용: (1차로)승용차관련사고처리중</p>
+  </div>
+</div><div class="notification-container">
+  <div class="notification-header">
+    <i class="fas fa-car-crash notification-icon"></i>
+    <h2 class="notification-title">교통사고 알림</h2>
+  </div>
+  <div class="notification-content">
+    <p class="hover-effect"><i class="fas fa-clock clock-icon"></i> 시간: 2024-10-06 16:06</p>
+    <p class="hover-effect"><i class="fas fa-road road-icon"></i> 도로명: 중앙선지선 (도로번호: 551)</p>
+    <p class="hover-effect"><i class="fas fa-location-arrow direction-icon"></i> 방향: 양산 방향</p>
+    <p class="hover-effect"><i class="fas fa-exclamation-triangle warning-icon"></i> 사고 유형: 교통사고 - 사고</p>
+    <p class="hover-effect"><i class="fas fa-info-circle info-icon"></i> 상세 내용: (4차로)1톤화물차관련사고처리완료</p>
+  </div>
+</div><div class="notification-container">
+  <div class="notification-header">
+    <i class="fas fa-car-crash notification-icon"></i>
+    <h2 class="notification-title">교통사고 알림</h2>
+  </div>
+  <div class="notification-content">
+    <p class="hover-effect"><i class="fas fa-clock clock-icon"></i> 시간: 2024-10-06 11:54</p>
+    <p class="hover-effect"><i class="fas fa-road road-icon"></i> 도로명: 영동선 (도로번호: 50)</p>
+    <p class="hover-effect"><i class="fas fa-location-arrow direction-icon"></i> 방향: 강릉 방향</p>
+    <p class="hover-effect"><i class="fas fa-exclamation-triangle warning-icon"></i> 사고 유형: 교통사고 - 사고</p>
+    <p class="hover-effect"><i class="fas fa-info-circle info-icon"></i> 상세 내용: (1차로)승용차관련사고처리중</p>
+  </div>
+</div><div class="notification-container">
+  <div class="notification-header">
+    <i class="fas fa-car-crash notification-icon"></i>
+    <h2 class="notification-title">교통사고 알림</h2>
+  </div>
+  <div class="notification-content">
+    <p class="hover-effect"><i class="fas fa-clock clock-icon"></i> 시간: 2024-10-06 12:46</p>
+    <p class="hover-effect"><i class="fas fa-road road-icon"></i> 도로명: 평택제천선 (도로번호: 40)</p>
+    <p class="hover-effect"><i class="fas fa-location-arrow direction-icon"></i> 방향: 제천 방향</p>
+    <p class="hover-effect"><i class="fas fa-exclamation-triangle warning-icon"></i> 사고 유형: 교통사고 - 사고</p>
+    <p class="hover-effect"><i class="fas fa-info-circle info-icon"></i> 상세 내용: (1차로)승용차관련사고처리완료</p>
+  </div>
+</div><div class="notification-container">
+  <div class="notification-header">
+    <i class="fas fa-car-crash notification-icon"></i>
+    <h2 class="notification-title">교통사고 알림</h2>
+  </div>
+  <div class="notification-content">
+    <p class="hover-effect"><i class="fas fa-clock clock-icon"></i> 시간: 2024-10-06 17:54</p>
+    <p class="hover-effect"><i class="fas fa-road road-icon"></i> 도로명: 경부선 (도로번호: 1)</p>
+    <p class="hover-effect"><i class="fas fa-location-arrow direction-icon"></i> 방향: 부산 방향</p>
+    <p class="hover-effect"><i class="fas fa-exclamation-triangle warning-icon"></i> 사고 유형: 교통사고 - 사고</p>
+    <p class="hover-effect"><i class="fas fa-info-circle info-icon"></i> 상세 내용: (진출로갓길)승용차단독사고처리중</p>
+  </div>
+</div><div class="notification-container">
+  <div class="notification-header">
+    <i class="fas fa-car-crash notification-icon"></i>
+    <h2 class="notification-title">교통사고 알림</h2>
+  </div>
+  <div class="notification-content">
+    <p class="hover-effect"><i class="fas fa-clock clock-icon"></i> 시간: 2024-10-06 13:53</p>
+    <p class="hover-effect"><i class="fas fa-road road-icon"></i> 도로명: 남해선(순천-부산) (도로번호: 10)</p>
+    <p class="hover-effect"><i class="fas fa-location-arrow direction-icon"></i> 방향: 부산 방향</p>
+    <p class="hover-effect"><i class="fas fa-exclamation-triangle warning-icon"></i> 사고 유형: 교통사고 - 사고</p>
+    <p class="hover-effect"><i class="fas fa-info-circle info-icon"></i> 상세 내용: (4차로,갓길)승용차관련사고처리중</p>
+  </div>
+</div><div class="notification-container">
+  <div class="notification-header">
+    <i class="fas fa-car-crash notification-icon"></i>
+    <h2 class="notification-title">교통사고 알림</h2>
+  </div>
+  <div class="notification-content">
+    <p class="hover-effect"><i class="fas fa-clock clock-icon"></i> 시간: 2024-10-06 22:18</p>
+    <p class="hover-effect"><i class="fas fa-road road-icon"></i> 도로명: 중부내륙선 (도로번호: 45)</p>
+    <p class="hover-effect"><i class="fas fa-location-arrow direction-icon"></i> 방향: 창원 방향</p>
+    <p class="hover-effect"><i class="fas fa-exclamation-triangle warning-icon"></i> 사고 유형: 교통사고 - 사고</p>
+    <p class="hover-effect"><i class="fas fa-info-circle info-icon"></i> 상세 내용: (갓길)승용차관련사고처리중</p>
+  </div>
+</div><div class="notification-container">
+  <div class="notification-header">
+    <i class="fas fa-car-crash notification-icon"></i>
+    <h2 class="notification-title">교통사고 알림</h2>
+  </div>
+  <div class="notification-content">
+    <p class="hover-effect"><i class="fas fa-clock clock-icon"></i> 시간: 2024-10-06 14:51</p>
+    <p class="hover-effect"><i class="fas fa-road road-icon"></i> 도로명: 광주대구선 (도로번호: 12)</p>
+    <p class="hover-effect"><i class="fas fa-location-arrow direction-icon"></i> 방향: 광주 방향</p>
+    <p class="hover-effect"><i class="fas fa-exclamation-triangle warning-icon"></i> 사고 유형: 교통사고 - 사고</p>
+    <p class="hover-effect"><i class="fas fa-info-circle info-icon"></i> 상세 내용: (1차로)승용차관련사고처리완료</p>
+  </div>
+</div><div class="notification-container">
+  <div class="notification-header">
+    <i class="fas fa-car-crash notification-icon"></i>
+    <h2 class="notification-title">교통사고 알림</h2>
+  </div>
+  <div class="notification-content">
+    <p class="hover-effect"><i class="fas fa-clock clock-icon"></i> 시간: 2024-10-06 11:12</p>
+    <p class="hover-effect"><i class="fas fa-road road-icon"></i> 도로명: 부산외곽선 (도로번호: 600)</p>
+    <p class="hover-effect"><i class="fas fa-location-arrow direction-icon"></i> 방향: 창원 방향</p>
+    <p class="hover-effect"><i class="fas fa-exclamation-triangle warning-icon"></i> 사고 유형: 교통사고 - 사고</p>
+    <p class="hover-effect"><i class="fas fa-info-circle info-icon"></i> 상세 내용: (갓길)화물차관련사고처리중</p>
+  </div>
+</div><div class="notification-container">
+  <div class="notification-header">
+    <i class="fas fa-car-crash notification-icon"></i>
+    <h2 class="notification-title">교통사고 알림</h2>
+  </div>
+  <div class="notification-content">
+    <p class="hover-effect"><i class="fas fa-clock clock-icon"></i> 시간: 2024-10-06 20:11</p>
+    <p class="hover-effect"><i class="fas fa-road road-icon"></i> 도로명: 중부내륙선 (도로번호: 45)</p>
+    <p class="hover-effect"><i class="fas fa-location-arrow direction-icon"></i> 방향: 창원 방향</p>
+    <p class="hover-effect"><i class="fas fa-exclamation-triangle warning-icon"></i> 사고 유형: 교통사고 - 사고</p>
+    <p class="hover-effect"><i class="fas fa-info-circle info-icon"></i> 상세 내용: (1차로)승용차관련사고처리완료</p>
+  </div>
+</div><div class="notification-container">
+  <div class="notification-header">
+    <i class="fas fa-car-crash notification-icon"></i>
+    <h2 class="notification-title">교통사고 알림</h2>
+  </div>
+  <div class="notification-content">
+    <p class="hover-effect"><i class="fas fa-clock clock-icon"></i> 시간: 2024-10-06 18:04</p>
+    <p class="hover-effect"><i class="fas fa-road road-icon"></i> 도로명: 경부선 (도로번호: 1)</p>
+    <p class="hover-effect"><i class="fas fa-location-arrow direction-icon"></i> 방향: 부산 방향</p>
+    <p class="hover-effect"><i class="fas fa-exclamation-triangle warning-icon"></i> 사고 유형: 교통사고 - 사고</p>
+    <p class="hover-effect"><i class="fas fa-info-circle info-icon"></i> 상세 내용: (1차로)승용차단독사고처리중</p>
+  </div>
+</div><div class="notification-container">
+  <div class="notification-header">
+    <i class="fas fa-car-crash notification-icon"></i>
+    <h2 class="notification-title">교통사고 알림</h2>
+  </div>
+  <div class="notification-content">
+    <p class="hover-effect"><i class="fas fa-clock clock-icon"></i> 시간: 2024-10-06 19:56</p>
+    <p class="hover-effect"><i class="fas fa-road road-icon"></i> 도로명: 부산울산선 (도로번호: 65)</p>
+    <p class="hover-effect"><i class="fas fa-location-arrow direction-icon"></i> 방향: 울산 방향</p>
+    <p class="hover-effect"><i class="fas fa-exclamation-triangle warning-icon"></i> 사고 유형: 교통사고 - 사고</p>
+    <p class="hover-effect"><i class="fas fa-info-circle info-icon"></i> 상세 내용: (진출로갓길)승용차단독사고처리중</p>
+  </div>
+</div><div class="notification-container">
+  <div class="notification-header">
+    <i class="fas fa-car-crash notification-icon"></i>
+    <h2 class="notification-title">교통사고 알림</h2>
+  </div>
+  <div class="notification-content">
+    <p class="hover-effect"><i class="fas fa-clock clock-icon"></i> 시간: 2024-10-06 15:08</p>
+    <p class="hover-effect"><i class="fas fa-road road-icon"></i> 도로명: 국도3호선 (도로번호: 3)</p>
+    <p class="hover-effect"><i class="fas fa-location-arrow direction-icon"></i> 방향: 종점 방향</p>
+    <p class="hover-effect"><i class="fas fa-exclamation-triangle warning-icon"></i> 사고 유형: 교통사고 - 추돌사고</p>
+    <p class="hover-effect"><i class="fas fa-info-circle info-icon"></i> 상세 내용: </p>
+  </div>
+</div><div class="notification-container">
+  <div class="notification-header">
+    <i class="fas fa-car-crash notification-icon"></i>
+    <h2 class="notification-title">교통사고 알림</h2>
+  </div>
+  <div class="notification-content">
+    <p class="hover-effect"><i class="fas fa-clock clock-icon"></i> 시간: 2024-10-06 14:47</p>
+    <p class="hover-effect"><i class="fas fa-road road-icon"></i> 도로명: 국도35호선 (도로번호: 35)</p>
+    <p class="hover-effect"><i class="fas fa-location-arrow direction-icon"></i> 방향: 종점 방향</p>
+    <p class="hover-effect"><i class="fas fa-exclamation-triangle warning-icon"></i> 사고 유형: 교통사고 - 추돌사고</p>
+    <p class="hover-effect"><i class="fas fa-info-circle info-icon"></i> 상세 내용: </p>
+  </div>
+</div><div class="notification-container">
+  <div class="notification-header">
+    <i class="fas fa-car-crash notification-icon"></i>
+    <h2 class="notification-title">교통사고 알림</h2>
+  </div>
+  <div class="notification-content">
+    <p class="hover-effect"><i class="fas fa-clock clock-icon"></i> 시간: 2024-10-06 13:39</p>
+    <p class="hover-effect"><i class="fas fa-road road-icon"></i> 도로명: 국도5호선 (도로번호: 5)</p>
+    <p class="hover-effect"><i class="fas fa-location-arrow direction-icon"></i> 방향: 시점 방향</p>
+    <p class="hover-effect"><i class="fas fa-exclamation-triangle warning-icon"></i> 사고 유형: 교통사고 - 추돌사고</p>
+    <p class="hover-effect"><i class="fas fa-info-circle info-icon"></i> 상세 내용: </p>
+  </div>
+</div><div class="notification-container">
+  <div class="notification-header">
+    <i class="fas fa-car-crash notification-icon"></i>
+    <h2 class="notification-title">교통사고 알림</h2>
+  </div>
+  <div class="notification-content">
+    <p class="hover-effect"><i class="fas fa-clock clock-icon"></i> 시간: 2024-10-06 16:23</p>
+    <p class="hover-effect"><i class="fas fa-road road-icon"></i> 도로명: 국도4호선 (도로번호: 4)</p>
+    <p class="hover-effect"><i class="fas fa-location-arrow direction-icon"></i> 방향: 시점 방향</p>
+    <p class="hover-effect"><i class="fas fa-exclamation-triangle warning-icon"></i> 사고 유형: 교통사고 - 추돌사고</p>
+    <p class="hover-effect"><i class="fas fa-info-circle info-icon"></i> 상세 내용: </p>
+  </div>
+</div><div class="notification-container">
+  <div class="notification-header">
+    <i class="fas fa-car-crash notification-icon"></i>
+    <h2 class="notification-title">교통사고 알림</h2>
+  </div>
+  <div class="notification-content">
+    <p class="hover-effect"><i class="fas fa-clock clock-icon"></i> 시간: 2024-10-06 19:11</p>
+    <p class="hover-effect"><i class="fas fa-road road-icon"></i> 도로명: 국도23호선 (도로번호: 23)</p>
+    <p class="hover-effect"><i class="fas fa-location-arrow direction-icon"></i> 방향: 종점 방향</p>
+    <p class="hover-effect"><i class="fas fa-exclamation-triangle warning-icon"></i> 사고 유형: 교통사고 - 추돌사고</p>
+    <p class="hover-effect"><i class="fas fa-info-circle info-icon"></i> 상세 내용: </p>
+  </div>
+</div><div class="notification-container">
+  <div class="notification-header">
+    <i class="fas fa-car-crash notification-icon"></i>
+    <h2 class="notification-title">교통사고 알림</h2>
+  </div>
+  <div class="notification-content">
+    <p class="hover-effect"><i class="fas fa-clock clock-icon"></i> 시간: 2024-10-06 6:49</p>
+    <p class="hover-effect"><i class="fas fa-road road-icon"></i> 도로명: 당진영덕고속도로 (도로번호: 30)</p>
+    <p class="hover-effect"><i class="fas fa-location-arrow direction-icon"></i> 방향: -</p>
+    <p class="hover-effect"><i class="fas fa-exclamation-triangle warning-icon"></i> 사고 유형: 교통사고 - -</p>
+    <p class="hover-effect"><i class="fas fa-info-circle info-icon"></i> 상세 내용: &lt;사고&gt; 당진영덕고속도로 회인IC 회인IC 1차로 0km(방향) 주의운전 고장 차량 <br></p>
+  </div>
+</div><div class="notification-container">
+  <div class="notification-header">
+    <i class="fas fa-car-crash notification-icon"></i>
+    <h2 class="notification-title">교통사고 알림</h2>
+  </div>
+  <div class="notification-content">
+    <p class="hover-effect"><i class="fas fa-clock clock-icon"></i> 시간: 2024-10-06 10:09</p>
+    <p class="hover-effect"><i class="fas fa-road road-icon"></i> 도로명: 호남고속도로 (도로번호: 25)</p>
+    <p class="hover-effect"><i class="fas fa-location-arrow direction-icon"></i> 방향: -</p>
+    <p class="hover-effect"><i class="fas fa-exclamation-triangle warning-icon"></i> 사고 유형: 교통사고 - -</p>
+    <p class="hover-effect"><i class="fas fa-info-circle info-icon"></i> 상세 내용: &lt;사고&gt; 호남고속도로 순천1터널 순천1터널 주의운전 사고 <br> 호남고속도로 순천방향 순천1터널 못 간 17.8Km 갓길 승용차 단독사고, 수습 중 <br> cctv. 접치 <br></p>
+  </div>
+</div><div class="notification-container">
+  <div class="notification-header">
+    <i class="fas fa-car-crash notification-icon"></i>
+    <h2 class="notification-title">교통사고 알림</h2>
+  </div>
+  <div class="notification-content">
+    <p class="hover-effect"><i class="fas fa-clock clock-icon"></i> 시간: 2024-10-06 10:36</p>
+    <p class="hover-effect"><i class="fas fa-road road-icon"></i> 도로명: 강변북로 (도로번호: 70)</p>
+    <p class="hover-effect"><i class="fas fa-location-arrow direction-icon"></i> 방향: -</p>
+    <p class="hover-effect"><i class="fas fa-exclamation-triangle warning-icon"></i> 사고 유형: 교통사고 - -</p>
+    <p class="hover-effect"><i class="fas fa-info-circle info-icon"></i> 상세 내용: &lt;사고&gt; 강변북로 성산대교 월드컵대교 1차로 서행 교통사고  서울청</p>
+  </div>
+</div><div class="notification-container">
+  <div class="notification-header">
+    <i class="fas fa-car-crash notification-icon"></i>
+    <h2 class="notification-title">교통사고 알림</h2>
+  </div>
+  <div class="notification-content">
+    <p class="hover-effect"><i class="fas fa-clock clock-icon"></i> 시간: 2024-10-06 12:01</p>
+    <p class="hover-effect"><i class="fas fa-road road-icon"></i> 도로명: 풍성로 (도로번호: 0)</p>
+    <p class="hover-effect"><i class="fas fa-location-arrow direction-icon"></i> 방향: -</p>
+    <p class="hover-effect"><i class="fas fa-exclamation-triangle warning-icon"></i> 사고 유형: 교통사고 - -</p>
+    <p class="hover-effect"><i class="fas fa-info-circle info-icon"></i> 상세 내용: &lt;사고&gt; 풍성로 성일초교 삼성A상가 주의운전 사고 <br> 서울시 올림픽대로 김포방향, 강동대교에서 구리암사대교구간 1차로에서 추돌사고가 일어났으니 주의요망. <br></p>
+  </div>
+</div><div class="notification-container">
+  <div class="notification-header">
+    <i class="fas fa-car-crash notification-icon"></i>
+    <h2 class="notification-title">교통사고 알림</h2>
+  </div>
+  <div class="notification-content">
+    <p class="hover-effect"><i class="fas fa-clock clock-icon"></i> 시간: 2024-10-06 13:29</p>
+    <p class="hover-effect"><i class="fas fa-road road-icon"></i> 도로명: 모악로 (도로번호: 27)</p>
+    <p class="hover-effect"><i class="fas fa-location-arrow direction-icon"></i> 방향: -</p>
+    <p class="hover-effect"><i class="fas fa-exclamation-triangle warning-icon"></i> 사고 유형: 교통사고 - -</p>
+    <p class="hover-effect"><i class="fas fa-info-circle info-icon"></i> 상세 내용: &lt;사고&gt; 일반국도21호선 구이교차로 이마트24전주원당점 주의운전 사고 <br> 국도21호선 구이교차로에서 중인교차로 방향 중간지점에서 화물차 화재사고 있었음. 현재 사고처리 마무리 작업으로인해 양방향 심하게 정체. <br></p>
+  </div>
+</div><div class="notification-container">
+  <div class="notification-header">
+    <i class="fas fa-car-crash notification-icon"></i>
+    <h2 class="notification-title">교통사고 알림</h2>
+  </div>
+  <div class="notification-content">
+    <p class="hover-effect"><i class="fas fa-clock clock-icon"></i> 시간: 2024-10-06 13:32</p>
+    <p class="hover-effect"><i class="fas fa-road road-icon"></i> 도로명: 수도권제2순환고속도로 (도로번호: 400)</p>
+    <p class="hover-effect"><i class="fas fa-location-arrow direction-icon"></i> 방향: -</p>
+    <p class="hover-effect"><i class="fas fa-exclamation-triangle warning-icon"></i> 사고 유형: 교통사고 - -</p>
+    <p class="hover-effect"><i class="fas fa-info-circle info-icon"></i> 상세 내용: &lt;사고&gt; 수도권제2순환고속도로 인천터널남측 중구동구 주의운전 사고 <br> &lt;긴급&gt; 서해대로 신흥사거리에서 유동삼거리방향, 신흥사거리 약 20m 지난 지점 1차로에서 승용차관련 접촉사고가 일어났음. 아직 사고처리 되지 않고 있으니 주의요망. <br></p>
+  </div>
+</div><div class="notification-container">
+  <div class="notification-header">
+    <i class="fas fa-car-crash notification-icon"></i>
+    <h2 class="notification-title">교통사고 알림</h2>
+  </div>
+  <div class="notification-content">
+    <p class="hover-effect"><i class="fas fa-clock clock-icon"></i> 시간: 2024-10-06 14:10</p>
+    <p class="hover-effect"><i class="fas fa-road road-icon"></i> 도로명: - (도로번호: -)</p>
+    <p class="hover-effect"><i class="fas fa-location-arrow direction-icon"></i> 방향: -</p>
+    <p class="hover-effect"><i class="fas fa-exclamation-triangle warning-icon"></i> 사고 유형: 교통사고 - -</p>
+    <p class="hover-effect"><i class="fas fa-info-circle info-icon"></i> 상세 내용: &lt;사고&gt; 서부간선지하도로 6.5km 지점 8.5km 지점 2차로 서행 고장 차량  서울청</p>
+  </div>
+</div><div class="notification-container">
+  <div class="notification-header">
+    <i class="fas fa-car-crash notification-icon"></i>
+    <h2 class="notification-title">교통사고 알림</h2>
+  </div>
+  <div class="notification-content">
+    <p class="hover-effect"><i class="fas fa-clock clock-icon"></i> 시간: 2024-10-06 16:30</p>
+    <p class="hover-effect"><i class="fas fa-road road-icon"></i> 도로명: 수도권제2순환고속도로 (도로번호: 400)</p>
+    <p class="hover-effect"><i class="fas fa-location-arrow direction-icon"></i> 방향: -</p>
+    <p class="hover-effect"><i class="fas fa-exclamation-triangle warning-icon"></i> 사고 유형: 교통사고 - -</p>
+    <p class="hover-effect"><i class="fas fa-info-circle info-icon"></i> 상세 내용: &lt;사고&gt; 수도권제2순환고속도로 서오산JC북측 서오산JC동측 주의운전 사고 <br> 수도권제2순환(봉담동탄)고속도로 동탄방향, 서오산분기점 1.5Km 정도 지난 지점에서 승용차관련 추돌사고가 일어났음. 현재 사고처리 하고 있고, 뒤로 오는 차량들 정체. <br></p>
+  </div>
+</div><div class="notification-container">
+  <div class="notification-header">
+    <i class="fas fa-car-crash notification-icon"></i>
+    <h2 class="notification-title">교통사고 알림</h2>
+  </div>
+  <div class="notification-content">
+    <p class="hover-effect"><i class="fas fa-clock clock-icon"></i> 시간: 2024-10-06 19:34</p>
+    <p class="hover-effect"><i class="fas fa-road road-icon"></i> 도로명: 강변북로 (도로번호: 70)</p>
+    <p class="hover-effect"><i class="fas fa-location-arrow direction-icon"></i> 방향: -</p>
+    <p class="hover-effect"><i class="fas fa-exclamation-triangle warning-icon"></i> 사고 유형: 교통사고 - -</p>
+    <p class="hover-effect"><i class="fas fa-info-circle info-icon"></i> 상세 내용: &lt;사고&gt; 강변북로 반포대교 동작대교 1차로  교통사고  서울청</p>
+  </div>
+</div><div class="notification-container">
+  <div class="notification-header">
+    <i class="fas fa-car-crash notification-icon"></i>
+    <h2 class="notification-title">교통사고 알림</h2>
+  </div>
+  <div class="notification-content">
+    <p class="hover-effect"><i class="fas fa-clock clock-icon"></i> 시간: 2024-10-06 7:26</p>
+    <p class="hover-effect"><i class="fas fa-road road-icon"></i> 도로명: 만덕대로 (도로번호: 14)</p>
+    <p class="hover-effect"><i class="fas fa-location-arrow direction-icon"></i> 방향: -</p>
+    <p class="hover-effect"><i class="fas fa-exclamation-triangle warning-icon"></i> 사고 유형: 교통사고 - -</p>
+    <p class="hover-effect"><i class="fas fa-info-circle info-icon"></i> 상세 내용: &lt;사고&gt; 만덕대로 동래구북구 만덕제2터널동측 주의운전 사고 <br> 만덕대로, 만덕사거리 방향, 만덕2터널 내 1400m 지점 2차로에 승용차 2대 추돌 사고가 났음.  <br></p>
+  </div>
+</div><div class="notification-container">
+  <div class="notification-header">
+    <i class="fas fa-car-crash notification-icon"></i>
+    <h2 class="notification-title">교통사고 알림</h2>
+  </div>
+  <div class="notification-content">
+    <p class="hover-effect"><i class="fas fa-clock clock-icon"></i> 시간: 2024-10-06 9:32</p>
+    <p class="hover-effect"><i class="fas fa-road road-icon"></i> 도로명: 사평대로 (도로번호: 0)</p>
+    <p class="hover-effect"><i class="fas fa-location-arrow direction-icon"></i> 방향: -</p>
+    <p class="hover-effect"><i class="fas fa-exclamation-triangle warning-icon"></i> 사고 유형: 교통사고 - -</p>
+    <p class="hover-effect"><i class="fas fa-info-circle info-icon"></i> 상세 내용: &lt;사고&gt; 사평대로 양정빌딩 교보타워사거리 5차로 서행 교통사고  서울청</p>
+  </div>
+</div><div class="notification-container">
+  <div class="notification-header">
+    <i class="fas fa-car-crash notification-icon"></i>
+    <h2 class="notification-title">교통사고 알림</h2>
+  </div>
+  <div class="notification-content">
+    <p class="hover-effect"><i class="fas fa-clock clock-icon"></i> 시간: 2024-10-06 10:10</p>
+    <p class="hover-effect"><i class="fas fa-road road-icon"></i> 도로명: 가로수로 (도로번호: 36)</p>
+    <p class="hover-effect"><i class="fas fa-location-arrow direction-icon"></i> 방향: -</p>
+    <p class="hover-effect"><i class="fas fa-exclamation-triangle warning-icon"></i> 사고 유형: 교통사고 - -</p>
+    <p class="hover-effect"><i class="fas fa-info-circle info-icon"></i> 상세 내용: &lt;사고&gt; 일반국도36호선 휴암동교차로 강상촌분기점 주의운전 사고 <br> 가로수로, 휴암동삼거리에서 강상촌분기점 방향 , 강상촌분기점 부근 1차로에 승용차, 화물차 추돌 사고  <br></p>
+  </div>
+</div><div class="notification-container">
+  <div class="notification-header">
+    <i class="fas fa-car-crash notification-icon"></i>
+    <h2 class="notification-title">교통사고 알림</h2>
+  </div>
+  <div class="notification-content">
+    <p class="hover-effect"><i class="fas fa-clock clock-icon"></i> 시간: 2024-10-06 10:37</p>
+    <p class="hover-effect"><i class="fas fa-road road-icon"></i> 도로명: 동부간선도로 (도로번호: 61)</p>
+    <p class="hover-effect"><i class="fas fa-location-arrow direction-icon"></i> 방향: -</p>
+    <p class="hover-effect"><i class="fas fa-exclamation-triangle warning-icon"></i> 사고 유형: 교통사고 - -</p>
+    <p class="hover-effect"><i class="fas fa-info-circle info-icon"></i> 상세 내용: &lt;사고&gt; 동부간선도로 자곡IC 수서IC 3차로 서행 고장 차량  서울청</p>
+  </div>
+</div><div class="notification-container">
+  <div class="notification-header">
+    <i class="fas fa-car-crash notification-icon"></i>
+    <h2 class="notification-title">교통사고 알림</h2>
+  </div>
+  <div class="notification-content">
+    <p class="hover-effect"><i class="fas fa-clock clock-icon"></i> 시간: 2024-10-06 11:56</p>
+    <p class="hover-effect"><i class="fas fa-road road-icon"></i> 도로명: 올림픽대로 (도로번호: 88)</p>
+    <p class="hover-effect"><i class="fas fa-location-arrow direction-icon"></i> 방향: -</p>
+    <p class="hover-effect"><i class="fas fa-exclamation-triangle warning-icon"></i> 사고 유형: 교통사고 - -</p>
+    <p class="hover-effect"><i class="fas fa-info-circle info-icon"></i> 상세 내용: &lt;사고&gt; 올림픽대로 강일IC 암사IC 1차로 서행 교통사고  서울청</p>
+  </div>
+</div><div class="notification-container">
+  <div class="notification-header">
+    <i class="fas fa-car-crash notification-icon"></i>
+    <h2 class="notification-title">교통사고 알림</h2>
+  </div>
+  <div class="notification-content">
+    <p class="hover-effect"><i class="fas fa-clock clock-icon"></i> 시간: 2024-10-06 13:03</p>
+    <p class="hover-effect"><i class="fas fa-road road-icon"></i> 도로명: 진천로 (도로번호: 0)</p>
+    <p class="hover-effect"><i class="fas fa-location-arrow direction-icon"></i> 방향: -</p>
+    <p class="hover-effect"><i class="fas fa-exclamation-triangle warning-icon"></i> 사고 유형: 교통사고 - -</p>
+    <p class="hover-effect"><i class="fas fa-info-circle info-icon"></i> 상세 내용: &lt;사고&gt; 진천로 진천남네거리 진천남네거리 주의운전 사고 <br> &lt;사고최초&gt;한실로 진천남네거리에서 도원네거리방향 진천남네거리 지난 지점 가장자리차로 승용차 추돌사고.   <br></p>
+  </div>
+</div><div class="notification-container">
+  <div class="notification-header">
+    <i class="fas fa-car-crash notification-icon"></i>
+    <h2 class="notification-title">교통사고 알림</h2>
+  </div>
+  <div class="notification-content">
+    <p class="hover-effect"><i class="fas fa-clock clock-icon"></i> 시간: 2024-10-06 13:05</p>
+    <p class="hover-effect"><i class="fas fa-road road-icon"></i> 도로명: 헌릉로 (도로번호: 0)</p>
+    <p class="hover-effect"><i class="fas fa-location-arrow direction-icon"></i> 방향: -</p>
+    <p class="hover-effect"><i class="fas fa-exclamation-triangle warning-icon"></i> 사고 유형: 교통사고 - -</p>
+    <p class="hover-effect"><i class="fas fa-info-circle info-icon"></i> 상세 내용: &lt;사고&gt; 헌릉로 염곡지하차도남측 염곡동사거리 주의운전 사고 <br>  서울시 양재대로 염곡사거리에서 양재나들목구간 5차로에서 추돌사고 처리 중.  <br></p>
+  </div>
+</div><div class="notification-container">
+  <div class="notification-header">
+    <i class="fas fa-car-crash notification-icon"></i>
+    <h2 class="notification-title">교통사고 알림</h2>
+  </div>
+  <div class="notification-content">
+    <p class="hover-effect"><i class="fas fa-clock clock-icon"></i> 시간: 2024-10-06 13:49</p>
+    <p class="hover-effect"><i class="fas fa-road road-icon"></i> 도로명: 달구벌대로 (도로번호: 0)</p>
+    <p class="hover-effect"><i class="fas fa-location-arrow direction-icon"></i> 방향: -</p>
+    <p class="hover-effect"><i class="fas fa-exclamation-triangle warning-icon"></i> 사고 유형: 교통사고 - -</p>
+    <p class="hover-effect"><i class="fas fa-info-circle info-icon"></i> 상세 내용: &lt;사고&gt; 달구벌대로 남부빌딩 다빈치커피범어로데오 1,2차로 주의운전 교통사고 <br></p>
+  </div>
+</div><div class="notification-container">
+  <div class="notification-header">
+    <i class="fas fa-car-crash notification-icon"></i>
+    <h2 class="notification-title">교통사고 알림</h2>
+  </div>
+  <div class="notification-content">
+    <p class="hover-effect"><i class="fas fa-clock clock-icon"></i> 시간: 2024-10-06 14:27</p>
+    <p class="hover-effect"><i class="fas fa-road road-icon"></i> 도로명: 올림픽대로 (도로번호: 88)</p>
+    <p class="hover-effect"><i class="fas fa-location-arrow direction-icon"></i> 방향: -</p>
+    <p class="hover-effect"><i class="fas fa-exclamation-triangle warning-icon"></i> 사고 유형: 교통사고 - -</p>
+    <p class="hover-effect"><i class="fas fa-info-circle info-icon"></i> 상세 내용: &lt;사고&gt; 올림픽대로 한남대교 반포대교 3차로 서행 교통사고  서울청</p>
+  </div>
+</div><div class="notification-container">
+  <div class="notification-header">
+    <i class="fas fa-car-crash notification-icon"></i>
+    <h2 class="notification-title">교통사고 알림</h2>
+  </div>
+  <div class="notification-content">
+    <p class="hover-effect"><i class="fas fa-clock clock-icon"></i> 시간: 2024-10-06 14:44</p>
+    <p class="hover-effect"><i class="fas fa-road road-icon"></i> 도로명: 회재로 (도로번호: 0)</p>
+    <p class="hover-effect"><i class="fas fa-location-arrow direction-icon"></i> 방향: -</p>
+    <p class="hover-effect"><i class="fas fa-exclamation-triangle warning-icon"></i> 사고 유형: 교통사고 - -</p>
+    <p class="hover-effect"><i class="fas fa-info-circle info-icon"></i> 상세 내용: &lt;사고&gt; 회재로 대촌교차로 성동가설산업 2차로 주의운전 교통사고 <br></p>
+  </div>
+</div><div class="notification-container">
+  <div class="notification-header">
+    <i class="fas fa-car-crash notification-icon"></i>
+    <h2 class="notification-title">교통사고 알림</h2>
+  </div>
+  <div class="notification-content">
+    <p class="hover-effect"><i class="fas fa-clock clock-icon"></i> 시간: 2024-10-06 16:46</p>
+    <p class="hover-effect"><i class="fas fa-road road-icon"></i> 도로명: 영동고속도로 (도로번호: 50)</p>
+    <p class="hover-effect"><i class="fas fa-location-arrow direction-icon"></i> 방향: -</p>
+    <p class="hover-effect"><i class="fas fa-exclamation-triangle warning-icon"></i> 사고 유형: 교통사고 - -</p>
+    <p class="hover-effect"><i class="fas fa-info-circle info-icon"></i> 상세 내용: &lt;사고&gt; 영동고속도로 용인IC 용인TG 3차로 0km(방향) 주의운전 교통사고 <br></p>
+  </div>
+</div><div class="notification-container">
+  <div class="notification-header">
+    <i class="fas fa-car-crash notification-icon"></i>
+    <h2 class="notification-title">교통사고 알림</h2>
+  </div>
+  <div class="notification-content">
+    <p class="hover-effect"><i class="fas fa-clock clock-icon"></i> 시간: 2024-10-06 17:10</p>
+    <p class="hover-effect"><i class="fas fa-road road-icon"></i> 도로명: 사문진로6길 (도로번호: 0)</p>
+    <p class="hover-effect"><i class="fas fa-location-arrow direction-icon"></i> 방향: -</p>
+    <p class="hover-effect"><i class="fas fa-exclamation-triangle warning-icon"></i> 사고 유형: 교통사고 - -</p>
+    <p class="hover-effect"><i class="fas fa-info-circle info-icon"></i> 상세 내용: &lt;사고&gt; 사문진로6길 천내리3213 성산리4652 1차로 주의운전 고장 차량 <br></p>
+  </div>
+</div><div class="notification-container">
+  <div class="notification-header">
+    <i class="fas fa-car-crash notification-icon"></i>
+    <h2 class="notification-title">교통사고 알림</h2>
+  </div>
+  <div class="notification-content">
+    <p class="hover-effect"><i class="fas fa-clock clock-icon"></i> 시간: 2024-10-06 19:26</p>
+    <p class="hover-effect"><i class="fas fa-road road-icon"></i> 도로명: 서울양양고속도로 (도로번호: 60)</p>
+    <p class="hover-effect"><i class="fas fa-location-arrow direction-icon"></i> 방향: -</p>
+    <p class="hover-effect"><i class="fas fa-exclamation-triangle warning-icon"></i> 사고 유형: 교통사고 - -</p>
+    <p class="hover-effect"><i class="fas fa-info-circle info-icon"></i> 상세 내용: &lt;사고&gt; 서울양양고속도로 월문천로28063 와부IC동측 주의운전 사고 <br> 서울양양고속도로 서울방향, 남양주요금소 부근 1차로에서 승용차관련 사고처리 중.  <br></p>
+  </div>
+</div><div class="notification-container">
+  <div class="notification-header">
+    <i class="fas fa-car-crash notification-icon"></i>
+    <h2 class="notification-title">교통사고 알림</h2>
+  </div>
+  <div class="notification-content">
+    <p class="hover-effect"><i class="fas fa-clock clock-icon"></i> 시간: 2024-10-06 19:48</p>
+    <p class="hover-effect"><i class="fas fa-road road-icon"></i> 도로명: 양재대로 (도로번호: 23)</p>
+    <p class="hover-effect"><i class="fas fa-location-arrow direction-icon"></i> 방향: -</p>
+    <p class="hover-effect"><i class="fas fa-exclamation-triangle warning-icon"></i> 사고 유형: 교통사고 - -</p>
+    <p class="hover-effect"><i class="fas fa-info-circle info-icon"></i> 상세 내용: &lt;사고&gt; 양재대로 수서IC 수서IC 주의운전 사고 <br> 서울시 분당수서로 성남방향, 수서나들목에서 복정교차로구간 2차로에서 사고가 일어났음. <br></p>
+  </div>
+</div><div class="notification-container">
+  <div class="notification-header">
+    <i class="fas fa-car-crash notification-icon"></i>
+    <h2 class="notification-title">교통사고 알림</h2>
+  </div>
+  <div class="notification-content">
+    <p class="hover-effect"><i class="fas fa-clock clock-icon"></i> 시간: 2024-10-06 12:30</p>
+    <p class="hover-effect"><i class="fas fa-road road-icon"></i> 도로명: 기린대로 (도로번호: 0)</p>
+    <p class="hover-effect"><i class="fas fa-location-arrow direction-icon"></i> 방향: -</p>
+    <p class="hover-effect"><i class="fas fa-exclamation-triangle warning-icon"></i> 사고 유형: 교통사고 - -</p>
+    <p class="hover-effect"><i class="fas fa-info-circle info-icon"></i> 상세 내용: &lt;사고&gt; 기린로 한벽교 교동5213 주의운전 사고 <br> 	12시 27분쯤 춘향로 좁은목약수터에서 한벽교 방향 벽화마을 못간지점 1차로에서 화물차 단독사고. 사고처리로인해 매우 혼잡 <br></p>
+  </div>
+</div><div class="notification-container">
+  <div class="notification-header">
+    <i class="fas fa-car-crash notification-icon"></i>
+    <h2 class="notification-title">교통사고 알림</h2>
+  </div>
+  <div class="notification-content">
+    <p class="hover-effect"><i class="fas fa-clock clock-icon"></i> 시간: 2024-10-06 15:40</p>
+    <p class="hover-effect"><i class="fas fa-road road-icon"></i> 도로명: 동작대로 (도로번호: 0)</p>
+    <p class="hover-effect"><i class="fas fa-location-arrow direction-icon"></i> 방향: -</p>
+    <p class="hover-effect"><i class="fas fa-exclamation-triangle warning-icon"></i> 사고 유형: 교통사고 - -</p>
+    <p class="hover-effect"><i class="fas fa-info-circle info-icon"></i> 상세 내용: &lt;사고&gt; 동작대로 용산구서초구 동작대교북측 주의운전 사고 <br> 서울시 강변북로 일산방향, 동작대교에서 한강대교구간 4차로에서 추돌사고가 일어났음. <br></p>
+  </div>
+</div><div class="notification-container">
+  <div class="notification-header">
+    <i class="fas fa-car-crash notification-icon"></i>
+    <h2 class="notification-title">교통사고 알림</h2>
+  </div>
+  <div class="notification-content">
+    <p class="hover-effect"><i class="fas fa-clock clock-icon"></i> 시간: 2024-10-06 9:04</p>
+    <p class="hover-effect"><i class="fas fa-road road-icon"></i> 도로명: 월송석화로 (도로번호: 0)</p>
+    <p class="hover-effect"><i class="fas fa-location-arrow direction-icon"></i> 방향: -</p>
+    <p class="hover-effect"><i class="fas fa-exclamation-triangle warning-icon"></i> 사고 유형: 교통사고 - -</p>
+    <p class="hover-effect"><i class="fas fa-info-circle info-icon"></i> 상세 내용: &lt;사고&gt; 월송석화로 월호교차로 서원주IC교차로 주의운전 사고 <br> 광주원주고속도로 광주방향 서원주IC~동양평IC/지정3터널(47k)(1차로)사고처리중 <br></p>
+  </div>
+</div><div class="notification-container">
+  <div class="notification-header">
+    <i class="fas fa-car-crash notification-icon"></i>
+    <h2 class="notification-title">교통사고 알림</h2>
+  </div>
+  <div class="notification-content">
+    <p class="hover-effect"><i class="fas fa-clock clock-icon"></i> 시간: 2024-10-06 11:10</p>
+    <p class="hover-effect"><i class="fas fa-road road-icon"></i> 도로명: - (도로번호: -)</p>
+    <p class="hover-effect"><i class="fas fa-location-arrow direction-icon"></i> 방향: -</p>
+    <p class="hover-effect"><i class="fas fa-exclamation-triangle warning-icon"></i> 사고 유형: 교통사고 - -</p>
+    <p class="hover-effect"><i class="fas fa-info-circle info-icon"></i> 상세 내용: &lt;사고&gt; 서부간선지하도로 2.0km 지점 4.0km 지점 1,2차로 서행 고장 차량  서울청</p>
+  </div>
+</div><div class="notification-container">
+  <div class="notification-header">
+    <i class="fas fa-car-crash notification-icon"></i>
+    <h2 class="notification-title">교통사고 알림</h2>
+  </div>
+  <div class="notification-content">
+    <p class="hover-effect"><i class="fas fa-clock clock-icon"></i> 시간: 2024-10-06 11:46</p>
+    <p class="hover-effect"><i class="fas fa-road road-icon"></i> 도로명: 올림픽대로 (도로번호: 88)</p>
+    <p class="hover-effect"><i class="fas fa-location-arrow direction-icon"></i> 방향: -</p>
+    <p class="hover-effect"><i class="fas fa-exclamation-triangle warning-icon"></i> 사고 유형: 교통사고 - -</p>
+    <p class="hover-effect"><i class="fas fa-info-circle info-icon"></i> 상세 내용: &lt;사고&gt; 올림픽대로 여의상류IC 여의하류IC 4차로 서행 교통사고  서울청</p>
+  </div>
+</div><div class="notification-container">
+  <div class="notification-header">
+    <i class="fas fa-car-crash notification-icon"></i>
+    <h2 class="notification-title">교통사고 알림</h2>
+  </div>
+  <div class="notification-content">
+    <p class="hover-effect"><i class="fas fa-clock clock-icon"></i> 시간: 2024-10-06 14:03</p>
+    <p class="hover-effect"><i class="fas fa-road road-icon"></i> 도로명: 검단로 (도로번호: 0)</p>
+    <p class="hover-effect"><i class="fas fa-location-arrow direction-icon"></i> 방향: -</p>
+    <p class="hover-effect"><i class="fas fa-exclamation-triangle warning-icon"></i> 사고 유형: 교통사고 - -</p>
+    <p class="hover-effect"><i class="fas fa-info-circle info-icon"></i> 상세 내용: &lt;사고&gt; 검단로 산격동1725 복현오거리 4차로 주의운전 교통사고 <br></p>
+  </div>
+</div><div class="notification-container">
+  <div class="notification-header">
+    <i class="fas fa-car-crash notification-icon"></i>
+    <h2 class="notification-title">교통사고 알림</h2>
+  </div>
+  <div class="notification-content">
+    <p class="hover-effect"><i class="fas fa-clock clock-icon"></i> 시간: 2024-10-06 14:26</p>
+    <p class="hover-effect"><i class="fas fa-road road-icon"></i> 도로명: 달구벌대로 (도로번호: 0)</p>
+    <p class="hover-effect"><i class="fas fa-location-arrow direction-icon"></i> 방향: -</p>
+    <p class="hover-effect"><i class="fas fa-exclamation-triangle warning-icon"></i> 사고 유형: 교통사고 - -</p>
+    <p class="hover-effect"><i class="fas fa-info-circle info-icon"></i> 상세 내용: &lt;사고&gt; 달구벌대로 다빈치커피범어로데오 수성구청역교차로 주의운전 사고 <br> &lt;사고중복&gt;달구벌대로 만촌네거리에서 범어네거리방향 수성구청역네거리 못 간 지점 4,5차로 승용차, 택시 추돌사고. <br>견인차 도착해서 사고 처리중. <br></p>
+  </div>
+</div><div class="notification-container">
+  <div class="notification-header">
+    <i class="fas fa-car-crash notification-icon"></i>
+    <h2 class="notification-title">교통사고 알림</h2>
+  </div>
+  <div class="notification-content">
+    <p class="hover-effect"><i class="fas fa-clock clock-icon"></i> 시간: 2024-10-06 15:00</p>
+    <p class="hover-effect"><i class="fas fa-road road-icon"></i> 도로명: 올림픽대로 (도로번호: 88)</p>
+    <p class="hover-effect"><i class="fas fa-location-arrow direction-icon"></i> 방향: -</p>
+    <p class="hover-effect"><i class="fas fa-exclamation-triangle warning-icon"></i> 사고 유형: 교통사고 - -</p>
+    <p class="hover-effect"><i class="fas fa-info-circle info-icon"></i> 상세 내용: &lt;사고&gt; 올림픽대로 동호대교JC 성수대교남측 주의운전 사고 <br> 서울시 동부간선로 의정부방향, 성동분기점에서 군자교구간 3차로에서 추돌사고 처리 중.  <br></p>
+  </div>
+</div><div class="notification-container">
+  <div class="notification-header">
+    <i class="fas fa-car-crash notification-icon"></i>
+    <h2 class="notification-title">교통사고 알림</h2>
+  </div>
+  <div class="notification-content">
+    <p class="hover-effect"><i class="fas fa-clock clock-icon"></i> 시간: 2024-10-06 15:38</p>
+    <p class="hover-effect"><i class="fas fa-road road-icon"></i> 도로명: 강변북로 (도로번호: 70)</p>
+    <p class="hover-effect"><i class="fas fa-location-arrow direction-icon"></i> 방향: -</p>
+    <p class="hover-effect"><i class="fas fa-exclamation-triangle warning-icon"></i> 사고 유형: 교통사고 - -</p>
+    <p class="hover-effect"><i class="fas fa-info-circle info-icon"></i> 상세 내용: &lt;사고&gt; 강변북로 동작대교 한강대교 4차로  교통사고  서울청</p>
+  </div>
+</div><div class="notification-container">
+  <div class="notification-header">
+    <i class="fas fa-car-crash notification-icon"></i>
+    <h2 class="notification-title">교통사고 알림</h2>
+  </div>
+  <div class="notification-content">
+    <p class="hover-effect"><i class="fas fa-clock clock-icon"></i> 시간: 2024-10-06 10:32</p>
+    <p class="hover-effect"><i class="fas fa-road road-icon"></i> 도로명: 수영로 (도로번호: 0)</p>
+    <p class="hover-effect"><i class="fas fa-location-arrow direction-icon"></i> 방향: -</p>
+    <p class="hover-effect"><i class="fas fa-exclamation-triangle warning-icon"></i> 사고 유형: 교통사고 - -</p>
+    <p class="hover-effect"><i class="fas fa-info-circle info-icon"></i> 상세 내용: &lt;사고&gt; 수영로 KBS삼거리 대남교차로 주의운전 사고 <br> 수영로, KBS삼거리 <br> 대남교차로 방향, KBS삼거리 지난 지점 버스, 승용차 추돌 사고가 났음.  <br></p>
+  </div>
+</div><div class="notification-container">
+  <div class="notification-header">
+    <i class="fas fa-car-crash notification-icon"></i>
+    <h2 class="notification-title">교통사고 알림</h2>
+  </div>
+  <div class="notification-content">
+    <p class="hover-effect"><i class="fas fa-clock clock-icon"></i> 시간: 2024-10-06 10:37</p>
+    <p class="hover-effect"><i class="fas fa-road road-icon"></i> 도로명: 중앙고속도로 (도로번호: 55)</p>
+    <p class="hover-effect"><i class="fas fa-location-arrow direction-icon"></i> 방향: -</p>
+    <p class="hover-effect"><i class="fas fa-exclamation-triangle warning-icon"></i> 사고 유형: 교통사고 - -</p>
+    <p class="hover-effect"><i class="fas fa-info-circle info-icon"></i> 상세 내용: &lt;사고&gt; 중앙고속도로 상동IC 용산교 3차로 0km(방향) 주의운전 교통사고 <br></p>
+  </div>
+</div><div class="notification-container">
+  <div class="notification-header">
+    <i class="fas fa-car-crash notification-icon"></i>
+    <h2 class="notification-title">교통사고 알림</h2>
+  </div>
+  <div class="notification-content">
+    <p class="hover-effect"><i class="fas fa-clock clock-icon"></i> 시간: 2024-10-06 13:06</p>
+    <p class="hover-effect"><i class="fas fa-road road-icon"></i> 도로명: 호남로 (도로번호: 21)</p>
+    <p class="hover-effect"><i class="fas fa-location-arrow direction-icon"></i> 방향: -</p>
+    <p class="hover-effect"><i class="fas fa-exclamation-triangle warning-icon"></i> 사고 유형: 교통사고 - -</p>
+    <p class="hover-effect"><i class="fas fa-info-circle info-icon"></i> 상세 내용: &lt;사고&gt; 일반국도21호선 중인교차로 중인교차로 주의운전 사고 <br> 도로이름 정정&gt; 국도21호선 구이교차로에서 중인교차로 방향 중간지점에서 화물차 화재사고 있었음. 현재 사고처리 마무리 작업으로인해 양방향 심하게 정체. <br></p>
+  </div>
+</div><div class="notification-container">
+  <div class="notification-header">
+    <i class="fas fa-car-crash notification-icon"></i>
+    <h2 class="notification-title">교통사고 알림</h2>
+  </div>
+  <div class="notification-content">
+    <p class="hover-effect"><i class="fas fa-clock clock-icon"></i> 시간: 2024-10-06 15:50</p>
+    <p class="hover-effect"><i class="fas fa-road road-icon"></i> 도로명: 내부순환도로 (도로번호: 30)</p>
+    <p class="hover-effect"><i class="fas fa-location-arrow direction-icon"></i> 방향: -</p>
+    <p class="hover-effect"><i class="fas fa-exclamation-triangle warning-icon"></i> 사고 유형: 교통사고 - -</p>
+    <p class="hover-effect"><i class="fas fa-info-circle info-icon"></i> 상세 내용: &lt;사고&gt; 내부순환도로 홍지문터널 성산 2차로  고장 차량  서울청</p>
+  </div>
+</div><div class="notification-container">
+  <div class="notification-header">
+    <i class="fas fa-car-crash notification-icon"></i>
+    <h2 class="notification-title">교통사고 알림</h2>
+  </div>
+  <div class="notification-content">
+    <p class="hover-effect"><i class="fas fa-clock clock-icon"></i> 시간: 2024-10-06 19:58</p>
+    <p class="hover-effect"><i class="fas fa-road road-icon"></i> 도로명: 중부내륙고속도로 (도로번호: 45)</p>
+    <p class="hover-effect"><i class="fas fa-location-arrow direction-icon"></i> 방향: -</p>
+    <p class="hover-effect"><i class="fas fa-exclamation-triangle warning-icon"></i> 사고 유형: 교통사고 - -</p>
+    <p class="hover-effect"><i class="fas fa-info-circle info-icon"></i> 상세 내용: &lt;사고&gt; 중부내륙고속도로 영산IC 영산IC 주의운전 사고 <br> &lt;긴급&gt;중부내륙고속도로 양평 방향 창녕나들목 지난 41.8km 추월로에 승용차, 화물차 3중 추돌사고 났음 <br></p>
+  </div>
+</div><div class="notification-container">
+  <div class="notification-header">
+    <i class="fas fa-car-crash notification-icon"></i>
+    <h2 class="notification-title">교통사고 알림</h2>
+  </div>
+  <div class="notification-content">
+    <p class="hover-effect"><i class="fas fa-clock clock-icon"></i> 시간: 2024-10-06 9:56</p>
+    <p class="hover-effect"><i class="fas fa-road road-icon"></i> 도로명: 감수길 (도로번호: 0)</p>
+    <p class="hover-effect"><i class="fas fa-location-arrow direction-icon"></i> 방향: -</p>
+    <p class="hover-effect"><i class="fas fa-exclamation-triangle warning-icon"></i> 사고 유형: 교통사고 - -</p>
+    <p class="hover-effect"><i class="fas fa-info-circle info-icon"></i> 상세 내용: &lt;사고&gt; 감수1길 감수경로당 미니스톱팔복공단점 1차로 주의운전 교통사고 <br></p>
+  </div>
+</div><div class="notification-container">
+  <div class="notification-header">
+    <i class="fas fa-car-crash notification-icon"></i>
+    <h2 class="notification-title">교통사고 알림</h2>
+  </div>
+  <div class="notification-content">
+    <p class="hover-effect"><i class="fas fa-clock clock-icon"></i> 시간: 2024-10-06 13:18</p>
+    <p class="hover-effect"><i class="fas fa-road road-icon"></i> 도로명: 우림로 (도로번호: 712)</p>
+    <p class="hover-effect"><i class="fas fa-location-arrow direction-icon"></i> 방향: -</p>
+    <p class="hover-effect"><i class="fas fa-exclamation-triangle warning-icon"></i> 사고 유형: 교통사고 - -</p>
+    <p class="hover-effect"><i class="fas fa-info-circle info-icon"></i> 상세 내용: &lt;사고&gt; 지방도712호선 창조부동산중개법인 중인삼거리 주의운전 사고 <br> 전주 우림로 구이교차로에서 중인교차로 방향 중간지점에서 화물차 화재사고 있었음. 현재 사고처리 마무리 작업으로인해 양방향 심하게 정체.  <br></p>
+  </div>
+</div><div class="notification-container">
+  <div class="notification-header">
+    <i class="fas fa-car-crash notification-icon"></i>
+    <h2 class="notification-title">교통사고 알림</h2>
+  </div>
+  <div class="notification-content">
+    <p class="hover-effect"><i class="fas fa-clock clock-icon"></i> 시간: 2024-10-06 13:52</p>
+    <p class="hover-effect"><i class="fas fa-road road-icon"></i> 도로명: 달구벌대로 (도로번호: 0)</p>
+    <p class="hover-effect"><i class="fas fa-location-arrow direction-icon"></i> 방향: -</p>
+    <p class="hover-effect"><i class="fas fa-exclamation-triangle warning-icon"></i> 사고 유형: 교통사고 - -</p>
+    <p class="hover-effect"><i class="fas fa-info-circle info-icon"></i> 상세 내용: &lt;사고&gt; 달구벌대로 남부빌딩 만촌네거리 주의운전 사고 <br> &lt;사고최초&gt;달구벌대로 범어네거리에서 만촌네거리방향 수성구청역 지난 지점 1,2,3차로 걸쳐 택시, 승용차, 승합차 다중 추돌사고. <br>승합차 전도되었고 구급차 도착해서 사고 처리중.  <br></p>
+  </div>
+</div><div class="notification-container">
+  <div class="notification-header">
+    <i class="fas fa-car-crash notification-icon"></i>
+    <h2 class="notification-title">교통사고 알림</h2>
+  </div>
+  <div class="notification-content">
+    <p class="hover-effect"><i class="fas fa-clock clock-icon"></i> 시간: 2024-10-06 15:11</p>
+    <p class="hover-effect"><i class="fas fa-road road-icon"></i> 도로명: 반포대로 (도로번호: 0)</p>
+    <p class="hover-effect"><i class="fas fa-location-arrow direction-icon"></i> 방향: -</p>
+    <p class="hover-effect"><i class="fas fa-exclamation-triangle warning-icon"></i> 사고 유형: 교통사고 - -</p>
+    <p class="hover-effect"><i class="fas fa-info-circle info-icon"></i> 상세 내용: &lt;사고&gt; 반포대교 남단 북단 2차로  교통사고  서울청</p>
+  </div>
+</div><div class="notification-container">
+  <div class="notification-header">
+    <i class="fas fa-car-crash notification-icon"></i>
+    <h2 class="notification-title">교통사고 알림</h2>
+  </div>
+  <div class="notification-content">
+    <p class="hover-effect"><i class="fas fa-clock clock-icon"></i> 시간: 2024-10-06 16:49</p>
+    <p class="hover-effect"><i class="fas fa-road road-icon"></i> 도로명: 경부고속도로 (도로번호: 1)</p>
+    <p class="hover-effect"><i class="fas fa-location-arrow direction-icon"></i> 방향: -</p>
+    <p class="hover-effect"><i class="fas fa-exclamation-triangle warning-icon"></i> 사고 유형: 교통사고 - -</p>
+    <p class="hover-effect"><i class="fas fa-info-circle info-icon"></i> 상세 내용: &lt;사고&gt; 경부고속도로 서초IC 반포IC 2차로  교통사고  서울청</p>
+  </div>
+</div><div class="notification-container">
+  <div class="notification-header">
+    <i class="fas fa-car-crash notification-icon"></i>
+    <h2 class="notification-title">교통사고 알림</h2>
+  </div>
+  <div class="notification-content">
+    <p class="hover-effect"><i class="fas fa-clock clock-icon"></i> 시간: 2024-10-06 18:51</p>
+    <p class="hover-effect"><i class="fas fa-road road-icon"></i> 도로명: 낙동남로 (도로번호: 2)</p>
+    <p class="hover-effect"><i class="fas fa-location-arrow direction-icon"></i> 방향: -</p>
+    <p class="hover-effect"><i class="fas fa-exclamation-triangle warning-icon"></i> 사고 유형: 교통사고 - -</p>
+    <p class="hover-effect"><i class="fas fa-info-circle info-icon"></i> 상세 내용: &lt;사고&gt; 일반국도2호선 성산삼거리 본녹산삼거리 주의운전 사고 <br> 낙동남로, 성산삼거리에서 본녹산삼거리 방향, 성산삼거리 지난 지점 가차로에 승용차 관련 추돌사고가 났으며 처리중임. <br></p>
+  </div>
+</div><div class="notification-container">
+  <div class="notification-header">
+    <i class="fas fa-car-crash notification-icon"></i>
+    <h2 class="notification-title">교통사고 알림</h2>
+  </div>
+  <div class="notification-content">
+    <p class="hover-effect"><i class="fas fa-clock clock-icon"></i> 시간: 2024-10-06 19:00</p>
+    <p class="hover-effect"><i class="fas fa-road road-icon"></i> 도로명: 인천국제공항고속도로 (도로번호: 130)</p>
+    <p class="hover-effect"><i class="fas fa-location-arrow direction-icon"></i> 방향: -</p>
+    <p class="hover-effect"><i class="fas fa-exclamation-triangle warning-icon"></i> 사고 유형: 교통사고 - -</p>
+    <p class="hover-effect"><i class="fas fa-info-circle info-icon"></i> 상세 내용: &lt;사고&gt; 인천국제공항고속도로 강서구고양시덕양구 방화대교남측 주의운전 사고 <br> 서울시 올림픽대로 하남방향, 방화대교에서 가양대교구간 1차로에서 추돌사고가 일어났음. <br></p>
+  </div>
+</div><div class="notification-container">
+  <div class="notification-header">
+    <i class="fas fa-car-crash notification-icon"></i>
+    <h2 class="notification-title">교통사고 알림</h2>
+  </div>
+  <div class="notification-content">
+    <p class="hover-effect"><i class="fas fa-clock clock-icon"></i> 시간: 2024-10-06 20:11</p>
+    <p class="hover-effect"><i class="fas fa-road road-icon"></i> 도로명: 경부고속도로 (도로번호: 1)</p>
+    <p class="hover-effect"><i class="fas fa-location-arrow direction-icon"></i> 방향: -</p>
+    <p class="hover-effect"><i class="fas fa-exclamation-triangle warning-icon"></i> 사고 유형: 교통사고 - -</p>
+    <p class="hover-effect"><i class="fas fa-info-circle info-icon"></i> 상세 내용: &lt;사고&gt; 경부고속도로 통도사IC 통도사IC 주의운전 사고 <br> 경부고속도로 부산 방향 통도사(32K)(갓길) 승용차 단독사고 처리중 <br></p>
+  </div>
+</div><div class="notification-container">
+  <div class="notification-header">
+    <i class="fas fa-car-crash notification-icon"></i>
+    <h2 class="notification-title">교통사고 알림</h2>
+  </div>
+  <div class="notification-content">
+    <p class="hover-effect"><i class="fas fa-clock clock-icon"></i> 시간: 2024-10-06 8:32</p>
+    <p class="hover-effect"><i class="fas fa-road road-icon"></i> 도로명: 부송로 (도로번호: 0)</p>
+    <p class="hover-effect"><i class="fas fa-location-arrow direction-icon"></i> 방향: -</p>
+    <p class="hover-effect"><i class="fas fa-exclamation-triangle warning-icon"></i> 사고 유형: 교통사고 - -</p>
+    <p class="hover-effect"><i class="fas fa-info-circle info-icon"></i> 상세 내용: &lt;사고&gt; 부평로 오공철물 기아자동차익산판매점 1차로 주의운전 교통사고 <br></p>
+  </div>
+</div><div class="notification-container">
+  <div class="notification-header">
+    <i class="fas fa-car-crash notification-icon"></i>
+    <h2 class="notification-title">교통사고 알림</h2>
+  </div>
+  <div class="notification-content">
+    <p class="hover-effect"><i class="fas fa-clock clock-icon"></i> 시간: 2024-10-06 10:49</p>
+    <p class="hover-effect"><i class="fas fa-road road-icon"></i> 도로명: 경부고속도로 (도로번호: 1)</p>
+    <p class="hover-effect"><i class="fas fa-location-arrow direction-icon"></i> 방향: -</p>
+    <p class="hover-effect"><i class="fas fa-exclamation-triangle warning-icon"></i> 사고 유형: 교통사고 - -</p>
+    <p class="hover-effect"><i class="fas fa-info-circle info-icon"></i> 상세 내용: &lt;사고&gt; 경부고속도로 학천육교 청주IC 주의운전 사고 <br> 경부고속도로, 청주분기점에서 청주나들목 방향 , 청주나들목 진출로 갓길에 승용차 단독 사고, 사고 처리 중임  <br></p>
+  </div>
+</div><div class="notification-container">
+  <div class="notification-header">
+    <i class="fas fa-car-crash notification-icon"></i>
+    <h2 class="notification-title">교통사고 알림</h2>
+  </div>
+  <div class="notification-content">
+    <p class="hover-effect"><i class="fas fa-clock clock-icon"></i> 시간: 2024-10-06 11:09</p>
+    <p class="hover-effect"><i class="fas fa-road road-icon"></i> 도로명: 올림픽대로 (도로번호: 88)</p>
+    <p class="hover-effect"><i class="fas fa-location-arrow direction-icon"></i> 방향: -</p>
+    <p class="hover-effect"><i class="fas fa-exclamation-triangle warning-icon"></i> 사고 유형: 교통사고 - -</p>
+    <p class="hover-effect"><i class="fas fa-info-circle info-icon"></i> 상세 내용: &lt;사고&gt; 올림픽대로 양화대교 성산대교 4차로 서행 고장 차량  서울청</p>
+  </div>
+</div><div class="notification-container">
+  <div class="notification-header">
+    <i class="fas fa-car-crash notification-icon"></i>
+    <h2 class="notification-title">교통사고 알림</h2>
+  </div>
+  <div class="notification-content">
+    <p class="hover-effect"><i class="fas fa-clock clock-icon"></i> 시간: 2024-10-06 12:44</p>
+    <p class="hover-effect"><i class="fas fa-road road-icon"></i> 도로명: 강변북로 (도로번호: 70)</p>
+    <p class="hover-effect"><i class="fas fa-location-arrow direction-icon"></i> 방향: -</p>
+    <p class="hover-effect"><i class="fas fa-exclamation-triangle warning-icon"></i> 사고 유형: 교통사고 - -</p>
+    <p class="hover-effect"><i class="fas fa-info-circle info-icon"></i> 상세 내용: &lt;사고&gt; 강변북로 마포대교 원효대교 4차로 서행 고장 차량  서울청</p>
+  </div>
+</div><div class="notification-container">
+  <div class="notification-header">
+    <i class="fas fa-car-crash notification-icon"></i>
+    <h2 class="notification-title">교통사고 알림</h2>
+  </div>
+  <div class="notification-content">
+    <p class="hover-effect"><i class="fas fa-clock clock-icon"></i> 시간: 2024-10-06 16:13</p>
+    <p class="hover-effect"><i class="fas fa-road road-icon"></i> 도로명: 서울외곽순환고속도로 (도로번호: 100)</p>
+    <p class="hover-effect"><i class="fas fa-location-arrow direction-icon"></i> 방향: -</p>
+    <p class="hover-effect"><i class="fas fa-exclamation-triangle warning-icon"></i> 사고 유형: 교통사고 - -</p>
+    <p class="hover-effect"><i class="fas fa-info-circle info-icon"></i> 상세 내용: &lt;사고&gt; 서울외곽순환고속도로 판교JC 판교JC 5차로 0km(판교JC방향) 주의운전 고장 차량 <br></p>
+  </div>
+</div><div class="notification-container">
+  <div class="notification-header">
+    <i class="fas fa-car-crash notification-icon"></i>
+    <h2 class="notification-title">교통사고 알림</h2>
+  </div>
+  <div class="notification-content">
+    <p class="hover-effect"><i class="fas fa-clock clock-icon"></i> 시간: 2024-10-06 16:44</p>
+    <p class="hover-effect"><i class="fas fa-road road-icon"></i> 도로명: 경부고속도로 (도로번호: 1)</p>
+    <p class="hover-effect"><i class="fas fa-location-arrow direction-icon"></i> 방향: -</p>
+    <p class="hover-effect"><i class="fas fa-exclamation-triangle warning-icon"></i> 사고 유형: 교통사고 - -</p>
+    <p class="hover-effect"><i class="fas fa-info-circle info-icon"></i> 상세 내용: &lt;사고&gt; 경부고속도로 양재IC 서초IC 3차로  교통사고  서울청</p>
+  </div>
+</div><div class="notification-container">
+  <div class="notification-header">
+    <i class="fas fa-car-crash notification-icon"></i>
+    <h2 class="notification-title">교통사고 알림</h2>
+  </div>
+  <div class="notification-content">
+    <p class="hover-effect"><i class="fas fa-clock clock-icon"></i> 시간: 2024-10-06 18:46</p>
+    <p class="hover-effect"><i class="fas fa-road road-icon"></i> 도로명: 올림픽대로 (도로번호: 88)</p>
+    <p class="hover-effect"><i class="fas fa-location-arrow direction-icon"></i> 방향: -</p>
+    <p class="hover-effect"><i class="fas fa-exclamation-triangle warning-icon"></i> 사고 유형: 교통사고 - -</p>
+    <p class="hover-effect"><i class="fas fa-info-circle info-icon"></i> 상세 내용: &lt;사고&gt; 올림픽대로 방화대교 가양대교 1차로  교통사고  서울청</p>
+  </div>
+</div><div class="notification-container">
+  <div class="notification-header">
+    <i class="fas fa-car-crash notification-icon"></i>
+    <h2 class="notification-title">교통사고 알림</h2>
+  </div>
+  <div class="notification-content">
+    <p class="hover-effect"><i class="fas fa-clock clock-icon"></i> 시간: 2024-10-06 19:20</p>
+    <p class="hover-effect"><i class="fas fa-road road-icon"></i> 도로명: 경충대로 (도로번호: 0)</p>
+    <p class="hover-effect"><i class="fas fa-location-arrow direction-icon"></i> 방향: -</p>
+    <p class="hover-effect"><i class="fas fa-exclamation-triangle warning-icon"></i> 사고 유형: 교통사고 - -</p>
+    <p class="hover-effect"><i class="fas fa-info-circle info-icon"></i> 상세 내용: &lt;사고&gt; 경충대로 광주IC교 광주IC교 주의운전 사고 <br> 중부고속도로 하남방향, 경기광주나들목 1차로에서 승용차관련 사고처리 중.  <br></p>
+  </div>
+</div><div class="notification-container">
+  <div class="notification-header">
+    <i class="fas fa-car-crash notification-icon"></i>
+    <h2 class="notification-title">교통사고 알림</h2>
+  </div>
+  <div class="notification-content">
+    <p class="hover-effect"><i class="fas fa-clock clock-icon"></i> 시간: 2024-10-06 19:59</p>
+    <p class="hover-effect"><i class="fas fa-road road-icon"></i> 도로명: 인천국제공항고속도로 (도로번호: 130)</p>
+    <p class="hover-effect"><i class="fas fa-location-arrow direction-icon"></i> 방향: -</p>
+    <p class="hover-effect"><i class="fas fa-exclamation-triangle warning-icon"></i> 사고 유형: 교통사고 - -</p>
+    <p class="hover-effect"><i class="fas fa-info-circle info-icon"></i> 상세 내용: &lt;사고&gt; 인천국제공항고속도로 금산IC 영종대교 4차로 0km(영종대교동단상부도로방향) 주의운전 고장 차량 <br></p>
+  </div>
+</div><div class="notification-container">
+  <div class="notification-header">
+    <i class="fas fa-car-crash notification-icon"></i>
+    <h2 class="notification-title">교통사고 알림</h2>
+  </div>
+  <div class="notification-content">
+    <p class="hover-effect"><i class="fas fa-clock clock-icon"></i> 시간: 2024-10-06 21:10</p>
+    <p class="hover-effect"><i class="fas fa-road road-icon"></i> 도로명: 월드컵북로 (도로번호: 0)</p>
+    <p class="hover-effect"><i class="fas fa-location-arrow direction-icon"></i> 방향: -</p>
+    <p class="hover-effect"><i class="fas fa-exclamation-triangle warning-icon"></i> 사고 유형: 교통사고 - -</p>
+    <p class="hover-effect"><i class="fas fa-info-circle info-icon"></i> 상세 내용: &lt;사고&gt; 월드컵북로 상암초교앞교차로內 상암사거리 1차로  교통사고  서울청</p>
+  </div>
+</div><div class="notification-container">
+  <div class="notification-header">
+    <i class="fas fa-car-crash notification-icon"></i>
+    <h2 class="notification-title">교통사고 알림</h2>
+  </div>
+  <div class="notification-content">
+    <p class="hover-effect"><i class="fas fa-clock clock-icon"></i> 시간: 2024-10-06 23:19</p>
+    <p class="hover-effect"><i class="fas fa-road road-icon"></i> 도로명: 진관산단로 (도로번호: 0)</p>
+    <p class="hover-effect"><i class="fas fa-location-arrow direction-icon"></i> 방향: -</p>
+    <p class="hover-effect"><i class="fas fa-exclamation-triangle warning-icon"></i> 사고 유형: 교통사고 - -</p>
+    <p class="hover-effect"><i class="fas fa-info-circle info-icon"></i> 상세 내용: &lt;사고&gt; 진관산단로 산업단지삼거리 진관리9818 1차로 주의운전 화재 <br></p>
+  </div>
+</div><div class="notification-container">
+  <div class="notification-header">
+    <i class="fas fa-car-crash notification-icon"></i>
+    <h2 class="notification-title">교통사고 알림</h2>
+  </div>
+  <div class="notification-content">
+    <p class="hover-effect"><i class="fas fa-clock clock-icon"></i> 시간: 2024-10-06 8:58</p>
+    <p class="hover-effect"><i class="fas fa-road road-icon"></i> 도로명: 논산천안고속도로 (도로번호: 25)</p>
+    <p class="hover-effect"><i class="fas fa-location-arrow direction-icon"></i> 방향: -</p>
+    <p class="hover-effect"><i class="fas fa-exclamation-triangle warning-icon"></i> 사고 유형: 교통사고 - -</p>
+    <p class="hover-effect"><i class="fas fa-info-circle info-icon"></i> 상세 내용: &lt;사고&gt; 천안논산고속도로 공주IC 전평교 주의운전 사고 <br> 11시 20분쯤 천안<br>논산간고속도로 천안 방면 정우터널(246.0K)1차로승용차관련사고처리중 <br></p>
+  </div>
+</div><div class="notification-container">
+  <div class="notification-header">
+    <i class="fas fa-car-crash notification-icon"></i>
+    <h2 class="notification-title">교통사고 알림</h2>
+  </div>
+  <div class="notification-content">
+    <p class="hover-effect"><i class="fas fa-clock clock-icon"></i> 시간: 2024-10-06 9:15</p>
+    <p class="hover-effect"><i class="fas fa-road road-icon"></i> 도로명: 호남고속도로지선 (도로번호: 251)</p>
+    <p class="hover-effect"><i class="fas fa-location-arrow direction-icon"></i> 방향: -</p>
+    <p class="hover-effect"><i class="fas fa-exclamation-triangle warning-icon"></i> 사고 유형: 교통사고 - -</p>
+    <p class="hover-effect"><i class="fas fa-info-circle info-icon"></i> 상세 내용: &lt;사고&gt; 호남고속도로지선 계룡IC 벌곡휴게소 기점방향 2차로 장애물 계룡IC → 벌곡휴게소 호남지선 기점</p>
+  </div>
+</div><div class="notification-container">
+  <div class="notification-header">
+    <i class="fas fa-car-crash notification-icon"></i>
+    <h2 class="notification-title">교통사고 알림</h2>
+  </div>
+  <div class="notification-content">
+    <p class="hover-effect"><i class="fas fa-clock clock-icon"></i> 시간: 2024-10-06 10:51</p>
+    <p class="hover-effect"><i class="fas fa-road road-icon"></i> 도로명: 대영로 (도로번호: 2)</p>
+    <p class="hover-effect"><i class="fas fa-location-arrow direction-icon"></i> 방향: -</p>
+    <p class="hover-effect"><i class="fas fa-exclamation-triangle warning-icon"></i> 사고 유형: 교통사고 - -</p>
+    <p class="hover-effect"><i class="fas fa-info-circle info-icon"></i> 상세 내용: &lt;사고&gt; 대영로 서부산농협대신SMART지 한국외식업중앙회부산 주의운전 사고 <br> *대영로, 동대사거리 <br> 동대신사거리 방향, 동대신사거리 정지선 1차로, 승용차 2대 추돌사고. <br></p>
+  </div>
+</div><div class="notification-container">
+  <div class="notification-header">
+    <i class="fas fa-car-crash notification-icon"></i>
+    <h2 class="notification-title">교통사고 알림</h2>
+  </div>
+  <div class="notification-content">
+    <p class="hover-effect"><i class="fas fa-clock clock-icon"></i> 시간: 2024-10-06 13:55</p>
+    <p class="hover-effect"><i class="fas fa-road road-icon"></i> 도로명: 달구벌대로 (도로번호: 0)</p>
+    <p class="hover-effect"><i class="fas fa-location-arrow direction-icon"></i> 방향: -</p>
+    <p class="hover-effect"><i class="fas fa-exclamation-triangle warning-icon"></i> 사고 유형: 교통사고 - -</p>
+    <p class="hover-effect"><i class="fas fa-info-circle info-icon"></i> 상세 내용: &lt;사고&gt; 달구벌대로 다빈치커피범어로데오 수성구청역교차로 주의운전 사고 <br> &lt;사고중복&gt;달구벌대로 수성구청역네거리에서 만촌네거리방향 수성구청역네거리 지난 지점 1차로 사고 차량 3대 추돌사고. <br>구급차 도착해서 사고 처리중.  <br></p>
+  </div>
+</div><div class="notification-container">
+  <div class="notification-header">
+    <i class="fas fa-car-crash notification-icon"></i>
+    <h2 class="notification-title">교통사고 알림</h2>
+  </div>
+  <div class="notification-content">
+    <p class="hover-effect"><i class="fas fa-clock clock-icon"></i> 시간: 2024-10-06 13:55</p>
+    <p class="hover-effect"><i class="fas fa-road road-icon"></i> 도로명: 서부로 (도로번호: 0)</p>
+    <p class="hover-effect"><i class="fas fa-location-arrow direction-icon"></i> 방향: -</p>
+    <p class="hover-effect"><i class="fas fa-exclamation-triangle warning-icon"></i> 사고 유형: 교통사고 - -</p>
+    <p class="hover-effect"><i class="fas fa-info-circle info-icon"></i> 상세 내용: &lt;사고&gt; 서부로436번길 김해터널 금남D&amp;F앞교차로 주의운전 사고 <br> 남해고속도로 순천 방향 진영휴게소(135K)(4차로,갓길) 승용차 관련사고 처리중 <br></p>
+  </div>
+</div><div class="notification-container">
+  <div class="notification-header">
+    <i class="fas fa-car-crash notification-icon"></i>
+    <h2 class="notification-title">교통사고 알림</h2>
+  </div>
+  <div class="notification-content">
+    <p class="hover-effect"><i class="fas fa-clock clock-icon"></i> 시간: 2024-10-06 14:25</p>
+    <p class="hover-effect"><i class="fas fa-road road-icon"></i> 도로명: 장자대로 (도로번호: 0)</p>
+    <p class="hover-effect"><i class="fas fa-location-arrow direction-icon"></i> 방향: -</p>
+    <p class="hover-effect"><i class="fas fa-exclamation-triangle warning-icon"></i> 사고 유형: 교통사고 - -</p>
+    <p class="hover-effect"><i class="fas fa-info-circle info-icon"></i> 상세 내용: &lt;사고&gt; 장자대로 장자1삼거리 장자2삼거리 3차로 주의운전 고장 차량 <br></p>
+  </div>
+</div><div class="notification-container">
+  <div class="notification-header">
+    <i class="fas fa-car-crash notification-icon"></i>
+    <h2 class="notification-title">교통사고 알림</h2>
+  </div>
+  <div class="notification-content">
+    <p class="hover-effect"><i class="fas fa-clock clock-icon"></i> 시간: 2024-10-06 15:41</p>
+    <p class="hover-effect"><i class="fas fa-road road-icon"></i> 도로명: 신목로 (도로번호: 0)</p>
+    <p class="hover-effect"><i class="fas fa-location-arrow direction-icon"></i> 방향: -</p>
+    <p class="hover-effect"><i class="fas fa-exclamation-triangle warning-icon"></i> 사고 유형: 교통사고 - -</p>
+    <p class="hover-effect"><i class="fas fa-info-circle info-icon"></i> 상세 내용: &lt;사고&gt; 신목로 목동중학교앞교차로 신정동대림아파트 주의운전 사고 <br> 서울시 안양천로 신정교에서 오목교방향, 오목교 약 20m 못 간 지점 하위차로에서 승용차 단독사고가 일어나, 뒤로 오는 차량들 정체.    <br></p>
+  </div>
+</div><div class="notification-container">
+  <div class="notification-header">
+    <i class="fas fa-car-crash notification-icon"></i>
+    <h2 class="notification-title">교통사고 알림</h2>
+  </div>
+  <div class="notification-content">
+    <p class="hover-effect"><i class="fas fa-clock clock-icon"></i> 시간: 2024-10-06 15:50</p>
+    <p class="hover-effect"><i class="fas fa-road road-icon"></i> 도로명: 통영대전고속도로 (도로번호: 35)</p>
+    <p class="hover-effect"><i class="fas fa-location-arrow direction-icon"></i> 방향: -</p>
+    <p class="hover-effect"><i class="fas fa-exclamation-triangle warning-icon"></i> 사고 유형: 교통사고 - -</p>
+    <p class="hover-effect"><i class="fas fa-info-circle info-icon"></i> 상세 내용: &lt;사고&gt; 통영대전고속도로 육십령터널 장수JC 종점방향  고장 육십령터널 → 장수JC 통영대전선 종점</p>
+  </div>
+</div><div class="notification-container">
+  <div class="notification-header">
+    <i class="fas fa-car-crash notification-icon"></i>
+    <h2 class="notification-title">교통사고 알림</h2>
+  </div>
+  <div class="notification-content">
+    <p class="hover-effect"><i class="fas fa-clock clock-icon"></i> 시간: 2024-10-06 16:17</p>
+    <p class="hover-effect"><i class="fas fa-road road-icon"></i> 도로명: 수도권제2순환고속도로 (도로번호: 400)</p>
+    <p class="hover-effect"><i class="fas fa-location-arrow direction-icon"></i> 방향: -</p>
+    <p class="hover-effect"><i class="fas fa-exclamation-triangle warning-icon"></i> 사고 유형: 교통사고 - -</p>
+    <p class="hover-effect"><i class="fas fa-info-circle info-icon"></i> 상세 내용: &lt;사고&gt; 수도권제2순환고속도로 오산휴게소 서오산JC동측 3차로 0km(봉담IC방향) 주의운전 교통사고 <br></p>
+  </div>
+</div><div class="notification-container">
+  <div class="notification-header">
+    <i class="fas fa-car-crash notification-icon"></i>
+    <h2 class="notification-title">교통사고 알림</h2>
+  </div>
+  <div class="notification-content">
+    <p class="hover-effect"><i class="fas fa-clock clock-icon"></i> 시간: 2024-10-06 16:47</p>
+    <p class="hover-effect"><i class="fas fa-road road-icon"></i> 도로명: 경부고속도로 (도로번호: 1)</p>
+    <p class="hover-effect"><i class="fas fa-location-arrow direction-icon"></i> 방향: -</p>
+    <p class="hover-effect"><i class="fas fa-exclamation-triangle warning-icon"></i> 사고 유형: 교통사고 - -</p>
+    <p class="hover-effect"><i class="fas fa-info-circle info-icon"></i> 상세 내용: &lt;사고&gt; 경부고속도로 양재육교 양재IC 주의운전 사고 <br> 경부고속도로 서울방향, 양재나들목에서 서초나들목구간 3차로에서 추돌사고가 일어났으니 주의요망.  <br></p>
+  </div>
+</div><div class="notification-container">
+  <div class="notification-header">
+    <i class="fas fa-car-crash notification-icon"></i>
+    <h2 class="notification-title">교통사고 알림</h2>
+  </div>
+  <div class="notification-content">
+    <p class="hover-effect"><i class="fas fa-clock clock-icon"></i> 시간: 2024-10-06 20:57</p>
+    <p class="hover-effect"><i class="fas fa-road road-icon"></i> 도로명: - (도로번호: -)</p>
+    <p class="hover-effect"><i class="fas fa-location-arrow direction-icon"></i> 방향: -</p>
+    <p class="hover-effect"><i class="fas fa-exclamation-triangle warning-icon"></i> 사고 유형: 교통사고 - -</p>
+    <p class="hover-effect"><i class="fas fa-info-circle info-icon"></i> 상세 내용: &lt;사고&gt; 올림픽대로 영동대교 청담대교 3차로  고장 차량  서울청</p>
+  </div>
+</div></div>
+
+</body>
+</html>
